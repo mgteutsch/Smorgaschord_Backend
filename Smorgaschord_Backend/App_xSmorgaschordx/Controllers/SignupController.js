@@ -16,7 +16,7 @@
                 console.log(result);
             });
 
-            $location.path("/login");
+            $location.path("/home");
         }
     }
 ]);
