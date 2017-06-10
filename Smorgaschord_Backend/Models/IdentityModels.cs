@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace Smorgaschord_Backend.Models
 {
@@ -25,6 +26,8 @@ namespace Smorgaschord_Backend.Models
         {
         }
         
+        public DbSet<ChordComposer> ChordComposerProgression { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
