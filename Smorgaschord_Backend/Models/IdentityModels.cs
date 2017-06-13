@@ -21,13 +21,13 @@ namespace Smorgaschord_Backend.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<ChordComposer> ChordComposers { get; set; }
+
         public ApplicationDbContext()
             : base("SmorgaschordDemo", throwIfV1Schema: false)
         {
         }
         
-        public DbSet<ChordComposer> ChordComposerProgression { get; set; }
-
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

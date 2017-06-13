@@ -18,8 +18,13 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         .when("/login",
         {
-            templateUrl: "App_xSmorgaschordx/Partials/Login.html",
+            templateUrl: "App_xSmorgaschordx/Partials/login.html",
             controller: "LoginController"
+        })
+        .when("/chordcomposer",
+        {
+            templateUrl: "App_xSmorgaschordx/Partials/chordcomposer.html",
+            controller: "ChordComposerCtrl"
         })
         .otherwise("/login");
 }])

@@ -9,7 +9,7 @@ namespace Smorgaschord_Backend.Models
     public class ChordComposer
     {
         [Key]
-        public int ChordComposerId { get; set; }
+        public int Id { get; set; }
         public string ChordProgressionName { get; set; }
         public string Chord1 { get; set; }
         public string Chord2 { get; set; }

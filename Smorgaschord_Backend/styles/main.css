@@ -1,0 +1,433 @@
+﻿/*
+body {
+}
+*/
+
+/**************************************************************/
+/* About Page Styling */
+/**************************************************************/
+/**************************************************************/
+/* Ear Training Styling */
+/**************************************************************/
+#earTrainingHeader {
+  text-shadow: 1px 1px black;
+  color: #eceff1; }
+
+.earTrainingBorder {
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px lightgrey;
+  background-image: url("../images/chordComposer/playerBackground.jpg");
+  background-repeat: repeat-xy; }
+
+.input-field .earTrainingInput1, .input-field .earTrainingInput2, .input-field .earTrainingInput3, .input-field .earTrainingInput4 {
+  background-color: grey;
+  border-radius: 5px;
+  box-shadow: none;
+  text-align: center; }
+
+.input-field .earTrainingGlowBox {
+  border: 2px solid yellow;
+  box-shadow: 0 0 20px yellow;
+  background-color: lightyellow; }
+
+.input-field .earTrainingInputCorrect {
+  background-color: #00b0ff; }
+
+.input-field .earTrainingInputWrong {
+  background-color: #f50057; }
+
+#answerSection {
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px lightgrey; }
+
+.wrongAnswer {
+  background-color: #f50057; }
+  .wrongAnswer #answerResultText {
+    color: #f8bbd0;
+    font-size: 150%; }
+
+.correctAnswer {
+  background-color: #00b0ff; }
+  .correctAnswer #answerResultText {
+    color: #b3e5fc;
+    font-size: 150%; }
+
+.chordCheckboxes label {
+  margin-right: 5%; }
+
+/**************************************************************/
+/* Chord Composer Styling */
+/**************************************************************/
+.playerBorder {
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px lightgrey;
+  background-image: url("../images/chordComposer/playerBackground.jpg");
+  background-repeat: repeat-xy; }
+
+#playerHeader {
+  text-shadow: 1px 1px black;
+  color: #eceff1; }
+
+#composerGIF {
+  height: 300px;
+  width: 600px;
+  border: 2px solid grey;
+  box-shadow: 5px 5px 5px lightgrey; }
+
+/* Glowing Boxes around Users New Chords */
+/*-----------------------------------------------------------*/
+.input-field .newChordInput1, .input-field .newChordInput2, .input-field .newChordInput3, .input-field .newChordInput4 {
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: none;
+  background-color: grey;
+  text-align: center; }
+
+.input-field .glowBox {
+  border: 2px solid yellow;
+  box-shadow: 0 0 20px yellow;
+  background-color: lightyellow; }
+
+/* Saved Progressions */
+/*-----------------------------------------------------------*/
+.input-field .savedProgressions {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  text-align: center; }
+
+.savedProgressionBtns {
+  padding-top: 4px; }
+
+/**************************************************************/
+/*Lessons Homepage Styling */
+/**************************************************************/
+#lessonsNavbar {
+  background-image: url("../images/singleLessons/singleLessonBackground.jpg");
+  background-repeat: repeat-xy; }
+
+.selected {
+  border-bottom: thick solid #f50057;
+  color: #f50057;
+  text-shadow: 1px 1px black; }
+
+/**************************************************************/
+/* Single Lessons Styling */
+/**************************************************************/
+.singleLessonBackground {
+  background-image: url("../images/singleLessons/singleLessonBackground.jpg");
+  background-repeat: repeat-xy; }
+
+.singleLessonContainer {
+  padding: 10px 10px 10px 10px; }
+  .singleLessonContainer p {
+    font-size: 100%; }
+
+.lessonChordBoxes {
+  height: 50px;
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: none;
+  background-color: #607d8b; }
+  .lessonChordBoxes h5 {
+    font-size: 125%; }
+
+.lessonIntroBoxes {
+  height: 50px;
+  border: 2px solid #009688;
+  border-radius: 5px;
+  box-shadow: none; }
+  .lessonIntroBoxes h5 {
+    font-size: 125%; }
+
+.lessonGlowBox {
+  border: 2px solid yellow;
+  box-shadow: 0 0 20px yellow;
+  background-color: lightyellow; }
+
+#chordScaleImage {
+  height: 80%;
+  width: 80%; }
+
+.input-field .quizInput1, .input-field .quizInput2, .input-field .quizInput3, .input-field .quizInput4 {
+  border-top: 2px solid darkgrey;
+  border-right: 2px solid darkgrey;
+  border-left: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: none;
+  text-align: center; }
+
+.input-field .quizInputCorrect {
+  background-color: #00b0ff; }
+
+.input-field .quizInputWrong {
+  background-color: #f50057; }
+
+.input-field .quizGlowBox {
+  border: 2px solid yellow;
+  box-shadow: 0 0 20px yellow;
+  background-color: lightyellow; }
+
+/**************************************************************/
+/* Improviser Styling */
+/**************************************************************/
+.improviserKeys .btn {
+  text-transform: none;
+  box-shadow: 3px 3px 2px #888888; }
+
+.background-I {
+  background-image: url("../images/improviserBackgrounds/multicolorPixelStatic.jpg");
+  background-repeat: repeat-xy; }
+
+.key-I {
+  background-color: #f50057; }
+
+.keyAlt-I {
+  background-color: #c51162; }
+
+.textColor-I {
+  color: white; }
+
+.bottomOptions-I {
+  background-color: white; }
+
+.navbarColor-I {
+  background-color: #f50057; }
+
+.background-ii {
+  background-image: url("../images/improviserBackgrounds/darkSwirls.jpg");
+  background-repeat: repeat-xy; }
+
+.key-ii {
+  background-color: #64ffda; }
+
+.keyAlt-ii {
+  background-color: #00bfa5; }
+
+.textColor-ii {
+  color: #00bfa5; }
+
+.bottomOptions-ii {
+  background-color: #00bfa5; }
+
+.navbarColor-ii {
+  background-color: #00bfa5; }
+
+.background-iii {
+  background-image: url("../images/improviserBackgrounds/blueCubes.jpg");
+  background-repeat: repeat-xy; }
+
+.key-iii {
+  background-color: #ff9100; }
+
+.keyAlt-iii {
+  background-color: #ff6d00; }
+
+.textColor-iii {
+  color: #ff6d00;
+  text-shadow: 1px 1px lightgrey; }
+
+.bottomOptions-iii {
+  background-color: #ff6d00; }
+
+.navbarColor-iii {
+  background-color: #ff6d00; }
+
+.background-IV {
+  background-image: url("../images/improviserBackgrounds/redCubes.jpg");
+  background-repeat: repeat-xy; }
+
+.key-IV {
+  background-color: #4fc3f7; }
+
+.keyAlt-IV {
+  background-color: #03a9f4; }
+
+.textColor-IV {
+  color: #4fc3f7;
+  text-shadow: 1px 1px lightgrey; }
+
+.bottomOptions-IV {
+  background-color: #4fc3f7; }
+
+.navbarColor-IV {
+  background-color: #4fc3f7; }
+
+.background-V {
+  background-image: url("../images/improviserBackgrounds/greenZigZags.jpg");
+  background-repeat: repeat-xy; }
+
+.key-V {
+  background-color: #f50057; }
+
+.keyAlt-V {
+  background-color: #c51162; }
+
+.textColor-V {
+  color: #f50057; }
+
+.bottomOptions-V {
+  background-color: #f50057; }
+
+.navbarColor-V {
+  background-color: #f50057; }
+
+.background-vi {
+  background-image: url("../images/improviserBackgrounds/greyHexagons.jpg");
+  background-repeat: repeat-xy; }
+
+.key-vi {
+  background-color: #536dfe; }
+
+.keyAlt-vi {
+  background-color: #304ffe; }
+
+.textColor-vi {
+  color: #536dfe; }
+
+.bottomOptions-vi {
+  background-color: #536dfe; }
+
+.navbarColor-vi {
+  background-color: #536dfe; }
+
+.background-vii {
+  background-image: url("../images/improviserBackgrounds/greenJaggedDiamonds.jpg");
+  background-repeat: repeat-xy; }
+
+.key-vii {
+  background-color: #ffeb3b; }
+
+.keyAlt-vii {
+  background-color: #fdd835; }
+
+.textColor-vii {
+  color: #fdd835;
+  text-shadow: 1px 1px lightgrey; }
+
+.bottomOptions-vii {
+  background-color: #fdd835; }
+
+.navbarColor-vii {
+  background-color: #fdd835; }
+
+/* Alternates */
+.background-i {
+  background-image: url("../images/improviserBackgrounds/duskCircles.jpg");
+  background-repeat: repeat-xy; }
+
+.key-i {
+  background-color: #536dfe; }
+
+.keyAlt-i {
+  background-color: #304ffe; }
+
+.textColor-i {
+  color: #304ffe; }
+
+.bottomOptions-i {
+  background-color: #304ffe; }
+
+.navbarColor-i {
+  background-color: #304ffe; }
+
+.background-II {
+  background-image: url("../images/improviserBackgrounds/orangeCircles.jpg");
+  background-repeat: repeat-xy; }
+
+.key-II {
+  background-color: #fdd835; }
+
+.keyAlt-II {
+  background-color: #fbc02d; }
+
+.textColor-II {
+  color: #ffff8d;
+  text-shadow: 1px 1px lightgrey; }
+
+.bottomOptions-II {
+  background-color: #ffff8d; }
+
+.navbarColor-II {
+  background-color: #fbc02d; }
+
+.background-III {
+  background-image: url("../images/improviserBackgrounds/whiteInterlace.jpg");
+  background-repeat: repeat-xy; }
+
+.key-III {
+  background-color: #ff4081; }
+
+.keyAlt-III {
+  background-color: #f50057; }
+
+.textColor-III {
+  color: #f50057;
+  text-shadow: 1px 1px lightgrey; }
+
+.bottomOptions-III {
+  background-color: #f50057; }
+
+.navbarColor-III {
+  background-color: #f50057; }
+
+.background-iv {
+  background-image: url("../images/improviserBackgrounds/purpleStarSnow.jpg");
+  background-repeat: repeat-xy; }
+
+.key-iv {
+  background-color: #84ffff; }
+
+.keyAlt-iv {
+  background-color: #00e5ff; }
+
+.textColor-iv {
+  color: #84ffff; }
+
+.bottomOptions-iv {
+  background-color: #84ffff; }
+
+.navbarColor-iv {
+  background-color: #84ffff; }
+
+.background-v {
+  background-image: url("../images/improviserBackgrounds/duskStars.jpg");
+  background-repeat: repeat-xy; }
+
+.key-v {
+  background-color: #1de9b6; }
+
+.keyAlt-v {
+  background-color: #00bfa5; }
+
+.textColor-v {
+  color: #00bfa5;
+  text-shadow: 1px 1px lightgrey; }
+
+.bottomOptions-v {
+  background-color: #00bfa5; }
+
+.navbarColor-v {
+  background-color: #00bfa5; }
+
+.background-VI {
+  background-image: url("../images/improviserBackgrounds/pinkRectangleNoise.jpg");
+  background-repeat: repeat-xy; }
+
+.key-VI {
+  background-color: #ffd740; }
+
+.keyAlt-VI {
+  background-color: #ffc400; }
+
+.textColor-VI {
+  color: #ffc400;
+  text-shadow: 1px 1px lightgrey; }
+
+.bottomOptions-VI {
+  background-color: #ffc400; }
+
+.navbarColor-VI {
+  background-color: #ffc400; }ḞḞḞḞḞḞḞㄳ1敦e单S㈶2⬮+┦%┦%┦%┦%牳r䅂A┦%倹`蹜°幁r㌽.剑X浭k慣a橭f捨h繺摣g孙\┦%┦%┦%┦%┦%┦%┦%┦%┦%┦%┦%䥌I桨h䑈Dⴰ-ⴰ-ⴰ-ⴰ-ⴰ-죟¨�Ùâî￿ÿ￿ÿ￿ÿ￿ÿ﷾ü�»ⴱ,ⴰ-ⴰ-ⴰ-ⴰ-㐵4㌳3㌳3ḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞḞ

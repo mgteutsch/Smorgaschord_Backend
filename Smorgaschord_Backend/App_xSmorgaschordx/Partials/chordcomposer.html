@@ -1,0 +1,108 @@
+﻿<div>
+    <h1>Chord Composer</h1>
+</div>
+
+<div class="container">
+    <br />
+    <div class="playerBorder">
+        <h4 id="playerHeader" class="center">Enter Chord Progression</h4>
+
+        <div class="row input-field">
+            <a class="col s1"></a>
+            <input type="text" placeholder="1" class="newChordInput1 col s1" ng-model="newProgression.Chord1">
+            <a class="col s2"></a>
+            <input type="text" placeholder="2" class="newChordInput2 col s1" ng-model="newProgression.Chord2">
+            <a class="col s2"></a>
+            <input type="text" placeholder="3" class="newChordInput3 col s1" ng-model="newProgression.Chord3">
+            <a class="col s2"></a>
+            <input type="text" placeholder="4" class="newChordInput4 col s1" ng-model="newProgression.Chord4">
+
+            <input type="text" placeholder="Name" class="col s2" ng-model="newProgression.ChordProgressionName">
+        </div>
+        <div class="row center">
+            <a id="playButton" class="waves-effect waves-light btn" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression); glowBoxes(); playDisabler=true"><i class="material-icons left">play_arrow</i>Play</a>
+
+            <a id="pauseButton" class="waves-effect waves-light btn" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression); glowBoxesEnd(); playDisabler=false"><i class="material-icons left">pause</i>Pause</a>
+
+            <a id="saveButton" class="waves-effect waves-light btn" ng-disabled="playDisabler" ng-click="addNewProgression(newProgression); glowBoxes()"><i class="material-icons left">playlist_add</i>Save</a>
+
+            <a id="clearButton" class="waves-effect waves-light btn" ng-disabled="playDisabler" ng-click="clearProgression(newProgression)">Clear</a>
+        </div>
+    </div>
+
+    <div ng-hide="errorMessage" ng-init="errorMessage=true">
+        <p>Please enter valid chords in all 4 boxes.</p>
+        <button type="button" class="btn btn-sm btn-warning" ng-click="errorMessage=true">OK</button>
+    </div>
+
+    <br />
+
+    <hr />
+    <h3 class="center">Saved Chord Progressions</h3>
+    <hr />
+    <div class="row" ng-repeat="chordProgression in chordProgressions">
+        <div class="singleProgressionContainer input-field" id="{{chordProgression.id}}">
+            <div class="col s1"></div>
+            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord1" ng-disabled="editDisabler" ng-init="editDisabler=true">
+            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord2" ng-disabled="editDisabler" ng-init="editDisabler=true">
+            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord3" ng-disabled="editDisabler" ng-init="editDisabler=true">
+            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord4" ng-disabled="editDisabler" ng-init="editDisabler=true">
+
+            <div class="savedProgressionBtns">
+                <a class="waves-effect waves-red btn-flat right" ng-disabled="playDisabler" ng-click="deleteProgression(chordProgression.id)"><i class="material-icons">delete</i></a>
+
+                <a class="waves-effect waves-light btn-flat right" ng-disabled="playDisabler" ng-hide="buttonHider" ng-click="editDisabler=false; buttonHider=true"><i class="material-icons right">mode_edit</i>Edit</a>
+
+                <a class="waves-effect waves-light btn-flat right" ng-disabled="playDisabler" ng-hide="!buttonHider" ng-click="editProgression(chordProgression)"><i class="material-icons right">done</i>Done</a>
+
+                <a class="waves-effect waves-yellow btn-flat right" ng-disabled="playDisabler" ng-click="loadToPlayer(chordProgression)"><i class="material-icons left">airplay</i>Load to Player</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Hidden - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--Audio Files preloaded to help prevent delay in the timing of playProgression()-->
+    
+    <!--
+    <div ng-hide="true">
+        <audio preload="auto">
+            <source src="audio/composerChords/I.mp3">
+            <source src="audio/composerChords/II.mp3">
+            <source src="audio/composerChords/III.mp3">
+            <source src="audio/composerChords/IV.mp3">
+            <source src="audio/composerChords/V.mp3">
+            <source src="audio/composerChords/VI.mp3">
+
+            <source src="audio/composerChords/minor-i.mp3">
+            <source src="audio/composerChords/minor-ii.mp3">
+            <source src="audio/composerChords/minor-iii.mp3">
+            <source src="audio/composerChords/minor-iv.mp3">
+            <source src="audio/composerChords/minor-v.mp3">
+            <source src="audio/composerChords/minor-vi.mp3">
+            <source src="audio/composerChords/minor-vii.mp3">
+        </audio>
+    </div>
+    -->
+
+</div>
+
+<!--Very bottom of page -->
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+        <div class="collapsible-header"><i class="material-icons">turned_in_not</i>More details about this page of the demo</div>
+        <div class="collapsible-body"><span><p>This page was designed to satisfy the initial CRUD requirements for this project. Users can enter in major and minor chords (I, ii, iii, IV, V, vi, vii as well as i, II, III, iv, v, VI), and the player will light up the chord boxes as the respective sound files loop. Progressions can be saved for future logins, or edited, or deleted completely. Currently, there is nothing denoting what the user can and cannot type for valid chord progressions, and I plan to have limited options via a dropdown in a future release.</p></span></div>
+    </li>
+</ul>
+
+<br />
+<br />
+
+<hr />
+<p class="center"><i class="material-icons">equalizer</i></p>
