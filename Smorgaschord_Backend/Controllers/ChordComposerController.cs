@@ -34,17 +34,22 @@ namespace Smorgaschord_Backend.Controllers
             _context.SaveChanges();
         }
 
-        [Route ("api/chordcomposer")]
+        [Route ("api/chordcomposer/editChords")]
         [HttpPut]
-        public void EditProgression(int progressionId)
+        public void EditProgression(ChordComposer editedProgression)
         {
-            ChordComposer editChords = _context.ChordComposers.Find(progressionId);
+            ChordComposer editChords = _context.ChordComposers.Find(editedProgression.Id);
+            editChords.ChordProgressionName = editedProgression.ChordProgressionName;
+            editChords.Chord1 = editedProgression.Chord1;
+            editChords.Chord2 = editedProgression.Chord2;
+            editChords.Chord3 = editedProgression.Chord3;
+            editChords.Chord4 = editedProgression.Chord4;
             _context.Entry(editChords).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        [Route ("api/chordcomposer")]
-        [HttpPost]
+        [Route ("api/chordcomposer/{progressionId}")]
+        [HttpDelete]
         public void DeleteProgression(int progressionId)
         {
             ChordComposer targetedProgression = _context.ChordComposers.Find(progressionId);
