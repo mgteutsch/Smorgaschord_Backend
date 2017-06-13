@@ -22,14 +22,14 @@
 
     $scope.editProgression = function (progressionToEdit) {
         console.log(progressionToEdit);
-        $http.put('/api/chordcomposer', progressionToEdit)
+        $http.put('/api/chordcomposer/editChords', progressionToEdit)
             .then(function () {
                 retrieveSavedProgressions();
             });
     }
 
     $scope.deleteProgression = function (progressionToDeleteId) {
-        $http.delete('/api/chordcomposer', progressionToDeleteId)
+        $http.delete(`/api/chordcomposer/${progressionToDeleteId}`)
             .then(function () {
                 retrieveSavedProgressions();
             });
