@@ -16,12 +16,24 @@ namespace Smorgaschord_Backend
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            //Not using bootsrap...
+            /*
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/site.css"));
+            */
+
+            //...using Materialize instead:
+            bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
+                      "~/Scripts/materialize.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/materialize.css",
+                      "~/Content/helpful-styles.css",
                       "~/Content/site.css"));
 
             //Additions for Smorgaschord:
