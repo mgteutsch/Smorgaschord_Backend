@@ -44,7 +44,7 @@ namespace Smorgaschord_Backend.Controllers
         }
 
         [Route ("api/chordcomposer")]
-        [HttpPost]
+        [HttpDelete]
         public void DeleteProgression(int progressionId)
         {
             ChordComposer targetedProgression = _context.ChordComposers.Find(progressionId);

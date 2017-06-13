@@ -41,15 +41,15 @@
     <h3 class="center">Saved Chord Progressions</h3>
     <hr />
     <div class="row" ng-repeat="chordProgression in chordProgressions">
-        <div class="singleProgressionContainer input-field" id="{{chordProgression.id}}">
+        <div class="singleProgressionContainer input-field" id="{{chordProgression.Id}}">
             <div class="col s1"></div>
-            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord1" ng-disabled="editDisabler" ng-init="editDisabler=true">
-            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord2" ng-disabled="editDisabler" ng-init="editDisabler=true">
-            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord3" ng-disabled="editDisabler" ng-init="editDisabler=true">
-            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord4" ng-disabled="editDisabler" ng-init="editDisabler=true">
+            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.Chord1" ng-disabled="editDisabler" ng-init="editDisabler=true">
+            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.Chord2" ng-disabled="editDisabler" ng-init="editDisabler=true">
+            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.Chord3" ng-disabled="editDisabler" ng-init="editDisabler=true">
+            <input type="text" class="col s1 savedProgressions" ng-model="chordProgression.Chord4" ng-disabled="editDisabler" ng-init="editDisabler=true">
 
             <div class="savedProgressionBtns">
-                <a class="waves-effect waves-red btn-flat right" ng-disabled="playDisabler" ng-click="deleteProgression(chordProgression.id)"><i class="material-icons">delete</i></a>
+                <a class="waves-effect waves-red btn-flat right" ng-disabled="playDisabler" ng-click="deleteProgression(chordProgression.Id)"><i class="material-icons">delete</i></a>
 
                 <a class="waves-effect waves-light btn-flat right" ng-disabled="playDisabler" ng-hide="buttonHider" ng-click="editDisabler=false; buttonHider=true"><i class="material-icons right">mode_edit</i>Edit</a>
 
