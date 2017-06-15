@@ -235,6 +235,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChordComposerController.cs" />
+    <Compile Include="Controllers\CustomLessonContainerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -247,6 +248,14 @@
     <Compile Include="Migrations\201706122334593_ChordComposer.cs" />
     <Compile Include="Migrations\201706122334593_ChordComposer.Designer.cs">
       <DependentUpon>201706122334593_ChordComposer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706151952059_CustomLessonBeginning.cs" />
+    <Compile Include="Migrations\201706151952059_CustomLessonBeginning.Designer.cs">
+      <DependentUpon>201706151952059_CustomLessonBeginning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706152001054_CustomLessonBeginningAgain.cs" />
+    <Compile Include="Migrations\201706152001054_CustomLessonBeginningAgain.Designer.cs">
+      <DependentUpon>201706152001054_CustomLessonBeginningAgain.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -406,6 +415,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706122334593_ChordComposer.resx">
       <DependentUpon>201706122334593_ChordComposer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706151952059_CustomLessonBeginning.resx">
+      <DependentUpon>201706151952059_CustomLessonBeginning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706152001054_CustomLessonBeginningAgain.resx">
+      <DependentUpon>201706152001054_CustomLessonBeginningAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
