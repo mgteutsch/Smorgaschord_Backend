@@ -235,6 +235,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChordComposerController.cs" />
+    <Compile Include="Controllers\CustomLessonContainerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -248,10 +249,19 @@
     <Compile Include="Migrations\201706122334593_ChordComposer.Designer.cs">
       <DependentUpon>201706122334593_ChordComposer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706151952059_CustomLessonBeginning.cs" />
+    <Compile Include="Migrations\201706151952059_CustomLessonBeginning.Designer.cs">
+      <DependentUpon>201706151952059_CustomLessonBeginning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706152001054_CustomLessonBeginningAgain.cs" />
+    <Compile Include="Migrations\201706152001054_CustomLessonBeginningAgain.Designer.cs">
+      <DependentUpon>201706152001054_CustomLessonBeginningAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ChordComposer.cs" />
+    <Compile Include="Models\CustomLessonContainer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -260,10 +270,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_xSmorgaschordx\Controllers\ChordComposerCtrl.js" />
+    <Content Include="App_xSmorgaschordx\Controllers\CustomLessonContainerCtrl.js" />
     <Content Include="App_xSmorgaschordx\Controllers\HomeController.js" />
     <Content Include="App_xSmorgaschordx\Controllers\LoginController.js" />
     <Content Include="App_xSmorgaschordx\Controllers\SignupController.js" />
     <Content Include="App_xSmorgaschordx\Partials\chordcomposer.html" />
+    <Content Include="App_xSmorgaschordx\Partials\customlessoncreator.html" />
+    <Content Include="App_xSmorgaschordx\Partials\customlessoninitialize.html" />
     <Content Include="App_xSmorgaschordx\Partials\home.html" />
     <Content Include="App_xSmorgaschordx\Partials\login.html" />
     <Content Include="App_xSmorgaschordx\Partials\signup.html" />
@@ -402,6 +415,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706122334593_ChordComposer.resx">
       <DependentUpon>201706122334593_ChordComposer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706151952059_CustomLessonBeginning.resx">
+      <DependentUpon>201706151952059_CustomLessonBeginning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706152001054_CustomLessonBeginningAgain.resx">
+      <DependentUpon>201706152001054_CustomLessonBeginningAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
