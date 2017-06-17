@@ -18,6 +18,15 @@ namespace Smorgaschord_Backend.Controllers
             _context = new ApplicationDbContext();
         }
 
+        // Custom Lesson Title (Container) ************************************************
+        [Route("api/CustomLessonTitle")]
+        [HttpPost]
+        public void AddCustomLessonTitle(CustomLessonContainer newTitle)
+        {
+            _context.CustomLessonContainers.Add(newTitle);
+            _context.SaveChanges();
+        }
+
         // Custom Lesson Text ***************************************************************
         [Route ("api/CustomLessonText")]
         [HttpGet]
