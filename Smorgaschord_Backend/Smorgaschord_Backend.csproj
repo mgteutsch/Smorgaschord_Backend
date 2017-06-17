@@ -266,11 +266,16 @@
     <Compile Include="Migrations\201706162112290_CustomLessonTextModels.Designer.cs">
       <DependentUpon>201706162112290_CustomLessonTextModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706170444181_CustomLessonSongs.cs" />
+    <Compile Include="Migrations\201706170444181_CustomLessonSongs.Designer.cs">
+      <DependentUpon>201706170444181_CustomLessonSongs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ChordComposer.cs" />
     <Compile Include="Models\CustomLessonContainer.cs" />
+    <Compile Include="Models\CustomLessonSongContent.cs" />
     <Compile Include="Models\CustomLessonTextContent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -438,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706162112290_CustomLessonTextModels.resx">
       <DependentUpon>201706162112290_CustomLessonTextModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706170444181_CustomLessonSongs.resx">
+      <DependentUpon>201706170444181_CustomLessonSongs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

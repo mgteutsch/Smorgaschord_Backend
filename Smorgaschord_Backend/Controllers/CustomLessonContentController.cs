@@ -18,6 +18,7 @@ namespace Smorgaschord_Backend.Controllers
             _context = new ApplicationDbContext();
         }
 
+        // Custom Lesson Text ***************************************************************
         [Route ("api/CustomLessonText")]
         [HttpGet]
         public List<CustomLessonTextContent> GetAllTextForLesson()
@@ -52,6 +53,16 @@ namespace Smorgaschord_Backend.Controllers
         {
             CustomLessonTextContent targetedSection = _context.CustomLessonTextContents.Find(sectionId);
             _context.CustomLessonTextContents.Remove(targetedSection);
+            _context.SaveChanges();
+        }
+
+
+        // Custom Lesson Songs ***************************************************************
+        [Route("api/CustomLessonSong")]
+        [HttpPost]
+        public void AddSong(CustomLessonSongContent newSongExample)
+        {
+            _context.CustomLessonSongContents.Add(newSongExample);
             _context.SaveChanges();
         }
     }
