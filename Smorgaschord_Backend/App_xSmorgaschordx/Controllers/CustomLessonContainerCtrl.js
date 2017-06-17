@@ -4,6 +4,7 @@
         $http.post('/api/CustomLessonTitle', userTitle)
             .then(function () {
                 $scope.customLessonInitialize = {};
+                $location.url("/customlessoncreator/placeholder");
             });
         }
 }]);

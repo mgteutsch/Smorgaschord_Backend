@@ -1,0 +1,29 @@
+﻿<div>
+    <h1>Custom Lesson Creator</h1>
+</div>
+
+<div class="container">
+    <div class="input-field">
+        <a id="initiateTextCreator" class="waves-effect waves-light btn" ng-click="openTextCreator()"><i class="material-icons left">subject</i>Add Lesson Text</a>
+        <a id="initiazteSongCreator" class="waves-effect waves-light btn" ng-click="openSongCreator()"><i class="material-icons left">library_music</i>Add Song Example</a>
+    </div>
+
+    <br/>
+
+    <div class="textCreatorArea" ng-hide="hideTextArea">
+        <textarea placeholder="Add lesson text here..." ng-model="lessonTextContent.TextSection"></textarea>
+        <input placeholder="Content order..." ng-model="lessonTextContent.ContentPlacementOrder" />
+        <input placeholder="LessonId" ng-model="lessonTextContent.CustomLessonContainerId" /> <!--Eliminate after fixing Route-->
+        <a id="addTextButton" class="waves-effect waves-light btn" ng-click="addTextSection(lessonTextContent)"><i class="material-icons left">subject</i>Add Section to Lesson</a>
+        <a id="cancelTextButton" class="waves-effect waves-light btn-flat" ng-click="cancelText()">Cancel</a>
+    </div>
+
+
+    <!--Materialize-->
+    <!--
+    <div class="input-field col s8">
+        <textarea id="textAreaCreator" class="materialize-textarea"></textarea>
+        <label for="textareaCreator">Create a text section here...</label>
+    </div>
+    -->
+</div>
