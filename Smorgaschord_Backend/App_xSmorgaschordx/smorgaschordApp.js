@@ -28,11 +28,6 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         .when("/customlessoncreator",
         {
-            templateUrl: "App_xSmorgaschordx/Partials/customlessoninitialize.html",
-            controller: "CustomLessonContainerCtrl"
-        })
-        .when("/customlessoncreator/placeholder",
-        {
             templateUrl: "App_xSmorgaschordx/Partials/customlessoncreate.html",
             controller: "CustomLessonContentCtrl"
         })
