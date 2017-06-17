@@ -24,6 +24,7 @@ namespace Smorgaschord_Backend.Models
         public DbSet<ChordComposer> ChordComposers { get; set; }
         public DbSet<CustomLessonContainer> CustomLessonContainers { get; set; }
         public DbSet<CustomLessonTextContent> CustomLessonTextContents { get; set; }
+        public DbSet<CustomLessonSongContent> CustomLessonSongContents { get; set; }
 
         public ApplicationDbContext()
             : base("SmorgaschordDemo", throwIfV1Schema: false)

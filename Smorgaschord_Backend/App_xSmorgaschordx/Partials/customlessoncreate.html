@@ -10,12 +10,51 @@
 
     <br/>
 
+    <!--Text Creator-->
     <div class="textCreatorArea" ng-hide="hideTextArea">
         <textarea placeholder="Add lesson text here..." ng-model="lessonTextContent.TextSection"></textarea>
         <input placeholder="Content order..." ng-model="lessonTextContent.ContentPlacementOrder" />
         <input placeholder="LessonId" ng-model="lessonTextContent.CustomLessonContainerId" /> <!--Eliminate after fixing Route-->
         <a id="addTextButton" class="waves-effect waves-light btn" ng-click="addTextSection(lessonTextContent)"><i class="material-icons left">subject</i>Add Section to Lesson</a>
         <a id="cancelTextButton" class="waves-effect waves-light btn-flat" ng-click="cancelText()">Cancel</a>
+    </div>
+
+    <!--Song Example Creator-->
+    <div class="songCreatorArea" ng-hide="hideSongArea">
+        <i class="material-icons prefix">search</i>
+        <input id="songSearchBar" placeholder="Search iTunes for song..." ng-model="searchBar" />
+        
+        <input id="songTitle" placeholder="Song Title" ng-model="lessonSongContent.SongTitle" />
+        <input id="songArtist" placeholder="Song Artist" ng-model="lessonSongContent.SongArtist" />
+        <input id="songClip" placeholder="Song Clip URL" ng-model="lessonSongContent.SongClip" />
+
+        <div id="songChords" class="row input-field">
+            <a class="col s1"></a>
+            <input type="text" placeholder="1" class="newChordInput1 col s1" ng-model="lessonSongContent.Chord1">
+            <a class="col s2"></a>
+            <input type="text" placeholder="2" class="newChordInput2 col s1" ng-model="lessonSongContent.Chord2">
+            <a class="col s2"></a>
+            <input type="text" placeholder="3" class="newChordInput3 col s1" ng-model="lessonSongContent.Chord3">
+            <a class="col s2"></a>
+            <input type="text" placeholder="4" class="newChordInput4 col s1" ng-model="lessonSongContent.Chord4">
+        </div>
+
+        <div id="chordMiliseconds" class="row input-field">
+            <a class="col s1"></a>
+            <input type="text" placeholder="1ms" class="newChordInput1 col s1" ng-model="lessonSongContent.Chord1Milisec">
+            <a class="col s2"></a>
+            <input type="text" placeholder="2ms" class="newChordInput2 col s1" ng-model="lessonSongContent.Chord2Milisec">
+            <a class="col s2"></a>
+            <input type="text" placeholder="3ms" class="newChordInput3 col s1" ng-model="lessonSongContent.Chord3Milisec">
+            <a class="col s2"></a>
+            <input type="text" placeholder="4ms" class="newChordInput4 col s1" ng-model="lessonSongContent.Chord4Milisec">
+        </div>
+        
+        <input placeholder="Content order..." ng-model="lessonSongContent.ContentPlacementOrder" />
+        <input placeholder="LessonId" ng-model="lessonSongContent.CustomLessonContainerId" /> <!--Eliminate after fixing Route-->
+        
+        <a id="addSongButton" class="waves-effect waves-light btn" ng-click="addSong(lessonSongContent)"><i class="material-icons left">library_music</i>Add Song to Lesson</a>
+        <a id="cancelSongButton" class="waves-effect waves-light btn-flat" ng-click="cancelSongExample()">Cancel</a>
     </div>
 
 
