@@ -3,7 +3,6 @@
 </div>
 
 <div class="container" ng-hide="hideTitleCreator">
-    <h3>First, give your lesson a title...</h3>
     <div class="input-field">
         <input type="text" placeholder="Title of Lesson" class="col s6" ng-model="customLessonInitialize.CustomLessonTitle" />
         <a id="saveTitleButton" class="waves-effect waves-light btn" ng-click="saveLessonTitle(customLessonInitialize)">Save Lesson Title</a>
@@ -14,6 +13,7 @@
 
 
 <div class="container" ng-hide="hideSongAndTextCreators">
+    <h3>{{lessonTitleEditor}}</h3>
     <div class="input-field">
         <a id="initiateTextCreator" class="waves-effect waves-light btn" ng-click="openTextCreator()"><i class="material-icons left">subject</i>Add Lesson Text</a>
         <a id="initiazteSongCreator" class="waves-effect waves-light btn" ng-click="openSongCreator()"><i class="material-icons left">library_music</i>Add Song Example</a>
@@ -25,7 +25,6 @@
     <div class="textCreatorArea" ng-hide="hideTextArea">
         <textarea placeholder="Add lesson text here..." ng-model="lessonTextContent.TextSection"></textarea>
         <input placeholder="Content order..." ng-model="lessonTextContent.ContentPlacementOrder" />
-        <input placeholder="LessonId" ng-model="lessonTextContent.CustomLessonContainerId" /> <!--Eliminate after fixing Route-->
         <a id="addTextButton" class="waves-effect waves-light btn" ng-click="addTextSection(lessonTextContent)"><i class="material-icons left">subject</i>Add Section to Lesson</a>
         <a id="cancelTextButton" class="waves-effect waves-light btn-flat" ng-click="cancelText()">Cancel</a>
     </div>
@@ -62,7 +61,6 @@
         </div>
         
         <input placeholder="Content order..." ng-model="lessonSongContent.ContentPlacementOrder" />
-        <input placeholder="LessonId" ng-model="lessonSongContent.CustomLessonContainerId" /> <!--Eliminate after fixing Route-->
         
         <a id="addSongButton" class="waves-effect waves-light btn" ng-click="addSong(lessonSongContent)"><i class="material-icons left">library_music</i>Add Song to Lesson</a>
         <a id="cancelSongButton" class="waves-effect waves-light btn-flat" ng-click="cancelSongExample()">Cancel</a>
