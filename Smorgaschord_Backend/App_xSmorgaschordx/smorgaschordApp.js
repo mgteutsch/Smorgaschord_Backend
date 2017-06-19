@@ -26,6 +26,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "App_xSmorgaschordx/Partials/chordcomposer.html",
             controller: "ChordComposerCtrl"
         })
+        .when("/lessons",
+        {
+            templateUrl: "App_xSmorgaschordx/Partials/lessons.html",
+            controller: "LessonsCtrl"
+        })
         .when("/customlessoncreator",
         {
             templateUrl: "App_xSmorgaschordx/Partials/customlessoncreate.html",

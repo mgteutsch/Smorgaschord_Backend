@@ -286,11 +286,13 @@
     <Content Include="App_xSmorgaschordx\Controllers\ChordComposerCtrl.js" />
     <Content Include="App_xSmorgaschordx\Controllers\CustomLessonContentCtrl.js" />
     <Content Include="App_xSmorgaschordx\Controllers\HomeController.js" />
+    <Content Include="App_xSmorgaschordx\Controllers\LessonsCtrl.js" />
     <Content Include="App_xSmorgaschordx\Controllers\LoginController.js" />
     <Content Include="App_xSmorgaschordx\Controllers\SignupController.js" />
     <Content Include="App_xSmorgaschordx\Partials\chordcomposer.html" />
     <Content Include="App_xSmorgaschordx\Partials\customlessoncreate.html" />
     <Content Include="App_xSmorgaschordx\Partials\home.html" />
+    <Content Include="App_xSmorgaschordx\Partials\lessons.html" />
     <Content Include="App_xSmorgaschordx\Partials\login.html" />
     <Content Include="App_xSmorgaschordx\Partials\navbar.html" />
     <Content Include="App_xSmorgaschordx\Partials\signup.html" />

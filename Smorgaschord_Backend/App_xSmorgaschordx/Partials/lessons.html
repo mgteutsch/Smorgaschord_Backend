@@ -1,0 +1,61 @@
+﻿<div>
+    <div>
+        <h1>Lessons</h1>
+    </div>
+
+    <div class="container">
+
+        <nav class="nav-extended" ng-hide="navHider" ng-init="navHider=false">
+            <div id="lessonsNavbar" class="nav-wrapper">
+                <ul class="tabs tabs-transparent tabs-fixed-width">
+                    <li class="tab left"><a id="regularLessonsTab" class="active selected" ng-click="regularLessonsClick()">Smörgåschord Standard Lessons</a></li>
+                    <li class="tab right"><a id="customLessonsTab" ng-click="customLessonsClick()">Townville High School Lessons</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="regularLessonsSection" class="collection" ng-hide="showHideLessons" ng-init="showHideLessons=false">
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Introduction</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 1: The I Chord (The "Major One")</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 2: The IV Chord (The "Major Four")</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 3: The V Chord (The "Major Five")</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 4: The I, IV, and V Chords Review</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 5: The I, IV, and V Chords... without starting on the I</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 6: The vii° Chord (The "diminished seventh")</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 7: The I, IV, V, and vii° Chords Review</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 8: The vi Chord (The "minor six")</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 9: The I, IV, V, vi, and vii° Chords Review</a>
+            <a href="#/lessons/lesson_10_minor_ii" class="collection-item" ng-click="scrollToTop()">Lesson 10: The ii Chord (The "minor second")</a>
+            <a href="#/lessons" class="collection-item">Lesson 11: The I, ii, IV, V, vi, and vii° Chords Review</a>
+            <a href="#/lessons" class="collection-item">Lesson 12: The iii Chord vs. the III Chord</a>
+            <a href="#/lessons" class="collection-item">Lesson 13: The I, ii, iii/III, IV, V, vi, and vii° Chords Review</a>
+            <a href="#/lessons" class="collection-item">Lesson 14: The II Chord (The "Major Second")</a>
+            <a href="#/lessons" class="collection-item">Lesson 15: The I, ii/II, iii/III, IV, V, vi, and vii° Chords Review</a>
+        </div>
+
+        <div id="customLessonsSection" class="collection" ng-hide="!showHideLessons">
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Mr. Kirkpatrick's Orch-201 Syllabus</a>
+            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Circle of Fifths/Fourths</a>
+            <a href="#/lessons" class="collection-item">Understanding Chord Structure for Chopin/Liszt Concert</a>
+            <a href="#/lessons" class="collection-item">Study Guide: Chopin/Liszt Concert Chords Quiz</a>
+            <a href="#/lessons" class="collection-item">Extra Credit 1: Because I know some of you need it!</a>
+        </div>
+
+    </div> <!-- Close Container -->
+    <!--Very bottom of page -->
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header"><i class="material-icons">turned_in_not</i>More details about this page of the demo</div>
+            <div class="collapsible-body"><span><p>This page shows an example of what lessons would look like for a student/teacher account. The mini-navbar shows the lessons that would come with the app as well as lessons that would be created and customized for students by their respective teacher/school (in this example, the "Townsville High School" tab). A non-student/teacher account would not have the customized tab, so the mini-navbar wouldn't populate on the page. Only the standard lessons would load. To see the Lessons page as a "normal" user (non-student/teacher), click <a href="" ng-click="regularLessonsClick(); navHider=true">hide mini-navbar</a>. Click <a href="" ng-click="navHider=false; ">here</a> to show it again.</p></span></div>
+        </li>
+    </ul>
+
+    <br />
+    <br />
+</div>
