@@ -1,4 +1,4 @@
-﻿app.controller("CustomLessonContentCtrl", ['$q', '$scope', '$rootScope','$http', '$location', function ($q, $scope, $rootScope, $http, $location) {
+﻿app.controller("CustomLessonContentCtrl", ['$q', '$scope', '$rootScope', '$http', '$location', '$window', '$sce', function ($q, $scope, $rootScope, $http, $location, $window, $sce) {
 
     var customLessonId = 0;
     var titleUserIsWorkingOn = "";
@@ -6,7 +6,7 @@
     //Show only the Title Creator to start, which will then initiate the Lesson Container
     //When the title is created, it creates the overall LessonId, which will be used for the Text and Songs
     $scope.hideTitleCreator = false;
-    $scope.hideSongAndTextCreators = true;
+    //$scope.hideSongAndTextCreators = true;
 
     //User first creates the Lesson Title (CustomLessonContainer Model):
     $scope.saveLessonTitle = function (userTitleObject) {
@@ -85,4 +85,41 @@
                 $scope.hideSongArea = true;
             });
     }
+
+    //iTunes ---------------------------------------------
+    $scope.searchTerm = "";
+    $scope.mediaType = "musicTrack";
+    $scope.filterTerm = "";
+    $scope.sortProp = "artistName";
+    $scope.showVideo = false;
+    $scope.searching = false;
+    $scope.previewUrl = null;
+  
+    $scope.iTunesSearch = function () {
+        var searchTerm = $scope.searchTerm;
+
+        $scope.searching = true;
+        console.log("Search term is: ", searchTerm);
+        $http.jsonp($sce.trustAsResourceUrl('https://itunes.apple.com/search'), { params: { term: searchTerm, entity: "musicTrack", limit: 5 } })
+            .then(function (iTunesResponse) {
+                $scope.searching = false;
+                $scope.searchTerm = "";
+                
+                for (i = 0; i < iTunesResponse.data.resultCount; i++) {
+                    //console.log(iTunesResponse.data.results[i]);
+                    console.log(iTunesResponse.data.results[i].trackName);
+                }
+
+                $scope.songResults = iTunesResponse.data.results;
+                
+            }).then(function () { console.log("done") });
+    }
+
+    $scope.selectSong = function (clickTarget) {
+        console.log(clickTarget.trackName);
+    }
+
+  
+
+
 }]);

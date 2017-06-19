@@ -67,6 +67,29 @@
     </div>
 
 
+    <!--iTunes Stuff-->
+    <hr/>
+    <div id="iTunesSection" class="input-field">
+        <h4>iTunes Stuff...</h4>
+
+        <input type="text" placeholder="Search iTunes..." ng-model="searchTerm" ng-disabled="searching" />
+        <a class="waves-effect waves-light btn" ng-click="iTunesSearch(searchTerm)" ng-disabled="searching">Search</a>
+        
+        <hr />
+        
+        <div ng-repeat="songResult in songResults">
+            <p>Song: {{songResult.trackName}}</p>
+            <p>Artist: {{songResult.artistName}}</p>
+            <audio controls><source src="{{songResult.previewUrl}}" /></audio>
+            <a class="btn-flat" ng-click="selectSong(songResult)">Select Song</a>
+            <hr/>
+
+        </div>
+       
+        <div ></div>
+
+
+
     <!--Materialize-->
     <!--
     <div class="input-field col s8">
