@@ -1,8 +1,25 @@
 ﻿<div>
-    <input type="text" id="username" ng-model="username" />
-    <input type="text" id="password" ng-model="password" />
-    <input type="button" value="Login" class="btn-default" ng-click="login()" />
+    <h4><i class="material-icons">equalizer</i>Smörgåschord</h4>
+    <hr />
+    <br />
+</div>
 
-    <a href="#!/signup">Sign Up!</a>
-    <p>{{testLogin}}</p>
+<div class="container">
+    <input type="text" id="email_username" ng-model="username" />
+    <label for="email_username">Email Address</label>
+    <input type="text" id="password" ng-model="password" />
+    <label for="password">Password</label>
+
+    <br />
+    <br />
+
+    <div class="center">
+        <a class="waves-effect waves-light btn" ng-click="login()">Submit</a>
+        <a class="waves-effect waves-light btn-flat" href="#!/signup">Sign Up!</a>
+        <p>{{testLogin}}</p>
+    </div>
+
+    <!--<input type="button" value="Login" class="btn-default" ng-click="login()" />-->
+
+    
 </div>

@@ -292,6 +292,7 @@
     <Content Include="App_xSmorgaschordx\Partials\customlessoncreate.html" />
     <Content Include="App_xSmorgaschordx\Partials\home.html" />
     <Content Include="App_xSmorgaschordx\Partials\login.html" />
+    <Content Include="App_xSmorgaschordx\Partials\navbar.html" />
     <Content Include="App_xSmorgaschordx\Partials\signup.html" />
     <Content Include="App_xSmorgaschordx\smorgaschordApp.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
