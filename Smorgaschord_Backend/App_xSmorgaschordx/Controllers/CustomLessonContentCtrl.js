@@ -6,7 +6,7 @@
     //Show only the Title Creator to start, which will then initiate the Lesson Container
     //When the title is created, it creates the overall LessonId, which will be used for the Text and Songs
     $scope.hideTitleCreator = false;
-    //$scope.hideSongAndTextCreators = true;
+    $scope.hideSongAndTextCreators = true;
 
     //User first creates the Lesson Title (CustomLessonContainer Model):
     $scope.saveLessonTitle = function (userTitleObject) {
@@ -73,10 +73,21 @@
 
 
     // SONG Items -------------------------------------------------------------
+    var userChoseniTunesSong = {};
+
     $scope.addSong = function (songExample) {
 
+        //From creating the Title (aka LessonContainer):
         songExample.CustomLessonContainerId = customLessonId;
         //This is much more efficient than the addTextSection function
+
+        //From the iTunes selection:
+        songExample.SongTitle = userChoseniTunesSong.trackName;
+        songExample.SongArtist = userChoseniTunesSong.artistName;
+        songExample.SongClip = userChoseniTunesSong.previewUrl;
+
+        console.log("songExample:", songExample);
+        
 
         $http.post('/api/CustomLessonSong', songExample)
             .then(function () {
@@ -87,14 +98,6 @@
     }
 
     //iTunes ---------------------------------------------
-    $scope.searchTerm = "";
-    $scope.mediaType = "musicTrack";
-    $scope.filterTerm = "";
-    $scope.sortProp = "artistName";
-    $scope.showVideo = false;
-    $scope.searching = false;
-    $scope.previewUrl = null;
-  
     $scope.iTunesSearch = function () {
         var searchTerm = $scope.searchTerm;
 
@@ -115,9 +118,12 @@
             }).then(function () { console.log("done") });
     }
 
-    $scope.selectSong = function (clickTarget) {
-        console.log(clickTarget.trackName);
+    $scope.selectSong = function (chosenSong) {
+        userChoseniTunesSong = chosenSong;
+
+        $scope.songResult = {};
     }
+
 
   
 
