@@ -28,15 +28,6 @@ namespace Smorgaschord_Backend.Controllers
             return newTitle;
         }
         
-        /*
-        [Route("api/CustomLessonTitle/CurrentLesson")]
-        [HttpGet]
-        public void GetTitleOfLessonUserIsCreating()
-        {
-            return _context.CustomLessonContainers.Where();
-        }
-        */
-        
 
         // Custom Lesson Text ***************************************************************
         [Route ("api/CustomLessonText")]
@@ -85,5 +76,7 @@ namespace Smorgaschord_Backend.Controllers
             _context.CustomLessonSongContents.Add(newSongExample);
             _context.SaveChanges();
         }
+
+
     }
 }
