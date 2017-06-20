@@ -45,13 +45,31 @@
     }
     displayListOfCustomLessonContainers();
 
+    var specificCustomLesson_Container = {};
+    var specificCustomLesson_Texts = {};
+    var specificCustomLesson_Songs = {};
 
-    var specificCustomLessonData = {};
+    $scope.goToSpecificLesson = function (specificLessonSelection) {
+        specificCustomLesson_Container = specificLessonSelection;
+        console.log("Step 1", specificCustomLesson_Container);
+        $http.get('/api/CustomLessonText')
+                .then(function (dbTextSections) {
+                    specificCustomLesson_Texts = dbTextSections.data;
+                    console.log("Step 2 - the first get", dbTextSections.data);
+                })
+                    .then(function () {
+                        $location.url("/lessons/customlesson" + specificCustomLesson_Container.Id);
+                        $scope.lessonTextSections = specificCustomLesson_Texts;
+                        console.log("Step 3 - location.url and creating texts", specificCustomLesson_Texts);
+                    });
+    }
 
-    $scope.goToSpecificLesson = function (specificLesson) {
-        console.log(specificLesson.CustomLessonTitle, specificLesson.Id);
-
-        specificCustomLessonData = specificLesson;
+    $scope.getTexts = function () {
+        $http.get('/api/CustomLessonText')
+            .then(function (dbTextSections) {
+                console.log(dbTextSections);
+                $scope.lessonTextSections = dbTextSections.data;
+            });
     }
 
 }]);

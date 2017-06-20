@@ -1,1 +1,8 @@
 ﻿<h1>HELLO</h1>
+<h2 ng-model="specificLessonTitle.CustomLessonTitle"></h2>
+
+<a class="waves-light btn" ng-click="getTexts()">Test Get</a>
+
+<div>
+    <p ng-repeat="lessonTextSection in lessonTextSections">{{lessonTextSection.TextSection}}</p>
+</div>
