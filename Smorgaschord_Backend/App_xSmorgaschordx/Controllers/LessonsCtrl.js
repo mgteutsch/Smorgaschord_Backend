@@ -50,6 +50,8 @@
 
     $scope.goToSpecificLesson = function (specificLesson) {
         console.log(specificLesson.CustomLessonTitle, specificLesson.Id);
+
+        specificCustomLessonData = specificLesson;
     }
 
 }]);

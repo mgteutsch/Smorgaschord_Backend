@@ -291,6 +291,7 @@
     <Content Include="App_xSmorgaschordx\Controllers\SignupController.js" />
     <Content Include="App_xSmorgaschordx\Partials\chordcomposer.html" />
     <Content Include="App_xSmorgaschordx\Partials\customlessoncreate.html" />
+    <Content Include="App_xSmorgaschordx\Partials\customlessonpage.html" />
     <Content Include="App_xSmorgaschordx\Partials\home.html" />
     <Content Include="App_xSmorgaschordx\Partials\lessons.html" />
     <Content Include="App_xSmorgaschordx\Partials\login.html" />
