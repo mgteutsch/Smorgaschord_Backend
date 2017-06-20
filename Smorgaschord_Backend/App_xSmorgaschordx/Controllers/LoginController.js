@@ -26,7 +26,7 @@
                 // sessionStorage.removeItem for logout (keyname)
                 $http.defaults.headers.common['Authorization'] = `bearer ${result.data.access_token}`;
 
-                $location.path("/home");
+                $location.path("/chordcomposer");
             });
         }
     }
