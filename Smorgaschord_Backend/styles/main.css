@@ -1,9 +1,4 @@
-﻿/*
-body {
-}
-*/
-
-/**************************************************************/
+﻿/**************************************************************/
 /* About Page Styling */
 /**************************************************************/
 /**************************************************************/
@@ -106,12 +101,15 @@ body {
 /**************************************************************/
 #lessonsNavbar {
   background-image: url("../images/singleLessons/singleLessonBackground.jpg");
-  background-repeat: repeat-xy; }
+  background-repeat: repeat-x;
+}
+
 
 .selected {
   border-bottom: thick solid #f50057;
   color: #f50057;
-  text-shadow: 1px 1px black; }
+  font-weight: 700;
+}
 
 /**************************************************************/
 /* Single Lessons Styling */

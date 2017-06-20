@@ -9,7 +9,7 @@
             <div id="lessonsNavbar" class="nav-wrapper">
                 <ul class="tabs tabs-transparent tabs-fixed-width">
                     <li class="tab left"><a id="regularLessonsTab" class="active selected" ng-click="regularLessonsClick()">Smörgåschord Standard Lessons</a></li>
-                    <li class="tab right"><a id="customLessonsTab" ng-click="customLessonsClick()">Townville High School Lessons</a></li>
+                    <li class="tab right"><a id="customLessonsTab" ng-click="customLessonsClick()">Belmont University</a></li>
                 </ul>
             </div>
         </nav>
@@ -34,11 +34,7 @@
         </div>
 
         <div id="customLessonsSection" class="collection" ng-hide="!showHideLessons">
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Mr. Kirkpatrick's Orch-201 Syllabus</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Circle of Fifths/Fourths</a>
-            <a href="#/lessons" class="collection-item">Understanding Chord Structure for Chopin/Liszt Concert</a>
-            <a href="#/lessons" class="collection-item">Study Guide: Chopin/Liszt Concert Chords Quiz</a>
-            <a href="#/lessons" class="collection-item">Extra Credit 1: Because I know some of you need it!</a>
+            <a href="#/lessons" class="collection-item" ng-repeat="lessonListItem in lessonListItems">{{lessonListItem.CustomLessonTitle}}</a>
         </div>
 
     </div> <!-- Close Container -->
@@ -49,12 +45,14 @@
     <br />
     <br />
 
+<!-- Collapsible is not working with Visual Studio right now...
     <ul class="collapsible" data-collapsible="accordion">
         <li>
             <div class="collapsible-header"><i class="material-icons">turned_in_not</i>More details about this page of the demo</div>
             <div class="collapsible-body"><span><p>This page shows an example of what lessons would look like for a student/teacher account. The mini-navbar shows the lessons that would come with the app as well as lessons that would be created and customized for students by their respective teacher/school (in this example, the "Townsville High School" tab). A non-student/teacher account would not have the customized tab, so the mini-navbar wouldn't populate on the page. Only the standard lessons would load. To see the Lessons page as a "normal" user (non-student/teacher), click <a href="" ng-click="regularLessonsClick(); navHider=true">hide mini-navbar</a>. Click <a href="" ng-click="navHider=false; ">here</a> to show it again.</p></span></div>
         </li>
     </ul>
+-->
 
     <br />
     <br />
