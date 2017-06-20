@@ -34,7 +34,7 @@
         </div>
 
         <div id="customLessonsSection" class="collection" ng-hide="!showHideLessons">
-            <a href="#/lessons" class="collection-item" ng-repeat="lessonListItem in lessonListItems">{{lessonListItem.CustomLessonTitle}}</a>
+            <a href="#!/lessons/customlesson{{lessonListItem.Id}}" class="collection-item" ng-repeat="lessonListItem in lessonListItems" ng-click="goToSpecificLesson(lessonListItem)">{{lessonListItem.CustomLessonTitle}}</a>
         </div>
 
     </div> <!-- Close Container -->
