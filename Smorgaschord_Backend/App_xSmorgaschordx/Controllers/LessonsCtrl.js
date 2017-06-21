@@ -78,10 +78,10 @@
     //SPECIFIC LESSON
     $scope.getLessonContent = function () {
         
-        $http.get('/api/CustomLessonSong/'+customLessonId)
-            .then(function (dbTextSections) {
-                console.log(dbTextSections);
-                $scope.lessonTextSections = dbTextSections.data;
+        $http.get('/api/CustomLessonSong/' + customLessonId)
+            .then(function (dbLessonContent) {
+                console.log(dbLessonContent);
+                $scope.lessonSongExamples = dbLessonContent.data;
             })
                 
     }

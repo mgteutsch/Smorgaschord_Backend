@@ -15,21 +15,10 @@
 <div class="container" ng-hide="hideSongAndTextCreators">
     <h3>{{lessonTitleEditor}}</h3>
     <div class="input-field">
-        <a id="initiateTextCreator" class="waves-effect waves-light btn" ng-click="openTextCreator()"><i class="material-icons left">subject</i>Add Lesson Text</a>
         <a id="initiazteSongCreator" class="waves-effect waves-light btn" ng-click="openSongCreator()"><i class="material-icons left">library_music</i>Add Song Example</a>
     </div>
 
     <br/>
-
-    <!--Text Creator-->
-    <!--
-    <div class="textCreatorArea" ng-hide="hideTextArea">
-        <textarea placeholder="Add lesson text here..." ng-model="lessonTextContent.TextSection"></textarea>
-        <input placeholder="Content order..." ng-model="lessonTextContent.ContentPlacementOrder" />
-        <a id="addTextButton" class="waves-effect waves-light btn" ng-click="addTextSection(lessonTextContent)"><i class="material-icons left">subject</i>Add Section to Lesson</a>
-        <a id="cancelTextButton" class="waves-effect waves-light btn-flat" ng-click="cancelText()">Cancel</a>
-    </div>
-    -->
 
     <!--Song Example Creator-->
     <div class="songCreatorArea input-field" ng-hide="hideSongArea">
