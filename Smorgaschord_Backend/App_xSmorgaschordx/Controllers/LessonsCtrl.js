@@ -1,4 +1,9 @@
-﻿app.controller("LessonsCtrl", ['$q', '$scope', '$rootScope','$http', '$location', function ($q, $scope, $rootScope, $http, $location) {
+﻿app.controller("LessonsCtrl", ['$q', '$scope', '$rootScope','$http', '$location', '$routeParams', function ($q, $scope, $rootScope, $http, $location, $routeParams) {
+
+    let customLessonId = $routeParams.id;
+    console.log(customLessonId);
+
+
 
     //On page load, remove any styling done by Improviser
     angular.element(document.querySelectorAll('#overallBackground')).removeClass();
@@ -36,6 +41,8 @@
         angular.element(document.querySelector('#customLessonsTab')).addClass("selected");
     };
 
+    
+
     //GET list of Custom Lessons
     let displayListOfCustomLessonContainers = function () {
         $http.get('/api/CustomLessonTitle')
@@ -45,13 +52,42 @@
     }
     displayListOfCustomLessonContainers();
 
+    var specificCustomLesson_Container = {};
+    var specificCustomLesson_Texts = {};
+    var specificCustomLesson_Songs = {};
 
-    var specificCustomLessonData = {};
+    
 
-    $scope.goToSpecificLesson = function (specificLesson) {
-        console.log(specificLesson.CustomLessonTitle, specificLesson.Id);
+    $scope.goToSpecificLesson = function (specificLessonSelection) {
+        specificCustomLesson_Container = specificLessonSelection;
+        console.log("Step 1", specificCustomLesson_Container);
 
-        specificCustomLessonData = specificLesson;
+        $http.get('/api/CustomLessonText')
+                .then(function (dbTextSections) {
+                    specificCustomLesson_Texts = dbTextSections.data;
+                    console.log("Step 2 - the first get", dbTextSections.data);
+                })
+                    .then(function () {
+                        $location.url("/lessons/customlesson/" + specificCustomLesson_Container.Id);
+                        $scope.lessonTextSections = specificCustomLesson_Texts;
+                        console.log("Step 3 - location.url and creating texts", specificCustomLesson_Texts);
+                    });
+    }
+
+
+    //SPECIFIC LESSON
+    $scope.getLessonContent = function () {
+        
+        $http.get('/api/CustomLessonSong/'+customLessonId)
+            .then(function (dbTextSections) {
+                console.log(dbTextSections);
+                $scope.lessonTextSections = dbTextSections.data;
+            })
+                
+    }
+
+    $scope.deleteLesson = function (specificCustomLesson_Container) {
+        console.log(specificCustomLesson_Container);
     }
 
 }]);

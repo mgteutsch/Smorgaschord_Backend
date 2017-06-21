@@ -1,1 +1,44 @@
-﻿<h1>HELLO</h1>
+﻿<h1>This is the page for the individual lesson...</h1>
+<h2 ng-model="specificLessonTitle.CustomLessonTitle"></h2>
+
+<a class="waves-light btn" ng-click="getLessonContent()">Begin Lesson</a>
+
+
+
+<div class="container">
+
+    <h3>Text Sections:</h3>
+    <hr />
+    <br />
+    <div ng-repeat="lessonTextSection in lessonTextSections">
+        <p>{{lessonTextSection.TextSection}}</p>
+        <hr/>    
+    </div>
+    
+    <h3>Song Sections:</h3>
+    <hr />
+    <br />
+    <div ng-repeat="lessonSongExample in lessonSongExamples">
+        <hr />
+        <h4 class="center">{{lessonSongExample.SongTitle}} || {{lessonSongExample.SongArtist}}</h4>
+        <hr />
+        <div class="center">
+            <div class="row">
+                <span class="col s1 offset-s4 center-align valign-wrapper lessonChordBoxes">{{lessonSongExample.Chord1}}</span>
+                <span class="col s1 center-align valign-wrapper lessonChordBoxes">{{lessonSongExample.Chord2}}</span>
+                <span class="col s1 center-align valign-wrapper lessonChordBoxes">{{lessonSongExample.Chord3}}</span>
+                <span class="col s1 center-align valign-wrapper lessonChordBoxes">{{lessonSongExample.Chord4}}</span>
+                <br/>
+            </div>
+            
+            <audio controls><source src="{{lessonSongExample.SongClip}}" /></audio>
+
+        </div>
+
+        
+
+    </div>
+    
+</div>
+
+<a class="waves=light btn" ng-click="deleteLesson(lessonListItem)">Delete Lesson<i class="material-icons right">delete</i></a>

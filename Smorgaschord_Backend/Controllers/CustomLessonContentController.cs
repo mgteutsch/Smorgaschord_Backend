@@ -45,6 +45,7 @@ namespace Smorgaschord_Backend.Controllers
             //Need to make sure the text will populate in the browser correctly...
         }
 
+
         [Route("api/CustomLessonText")]
         [HttpPost]
         public void AddTextSection(CustomLessonTextContent newTextSection)
@@ -80,8 +81,18 @@ namespace Smorgaschord_Backend.Controllers
         [HttpPost]
         public void AddSong(CustomLessonSongContent newSongExample)
         {
-            _context.CustomLessonSongContents.Add(newSongExample);
+            var specificLessonContainer = _context.CustomLessonContainers.FirstOrDefault(x => x.Id == newSongExample.CustomLessonContainerId);
+            //_context.CustomLessonSongContents.Add(newSongExample);
+            specificLessonContainer.LessonContentItems.Add(newSongExample);
             _context.SaveChanges();
+        }
+
+        [Route("api/CustomLessonSong/{theLessonId}")]
+        [HttpGet]
+        public List<CustomLessonSongContent> GetSongDataForLesson(int theLessonId)
+        {
+            var theSpecificLessonContainer = _context.CustomLessonContainers.FirstOrDefault(x => x.Id == theLessonId);
+            return theSpecificLessonContainer.LessonContentItems;
         }
 
 

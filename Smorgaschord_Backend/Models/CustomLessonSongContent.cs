@@ -11,6 +11,7 @@ namespace Smorgaschord_Backend.Models
         [Key]
         public int Id { get; set; }
         public int CustomLessonContainerId { get; set; }
+        public string TextSection { get; set; }
         public string SongTitle { get; set; }
         public string SongArtist { get; set; }
         public string SongClip { get; set; }

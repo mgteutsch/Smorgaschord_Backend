@@ -11,6 +11,8 @@ namespace Smorgaschord_Backend.Models
         [Key]
         public int Id { get; set; }
         public string CustomLessonTitle { get; set; }
+        public virtual List<CustomLessonSongContent> LessonContentItems { get; set; }
+
 
         //This Model is the focal point of:
         // -- CustomLessonText

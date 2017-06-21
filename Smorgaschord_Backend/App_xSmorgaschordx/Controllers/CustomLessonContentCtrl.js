@@ -6,7 +6,7 @@
     //Show only the Title Creator to start, which will then initiate the Lesson Container
     //When the title is created, it creates the overall LessonId, which will be used for the Text and Songs
     $scope.hideTitleCreator = false;
-    //$scope.hideSongAndTextCreators = true;
+    $scope.hideSongAndTextCreators = true;
 
     //User first creates the Lesson Title (CustomLessonContainer Model):
     $scope.saveLessonTitle = function (userTitleObject) {
@@ -73,10 +73,54 @@
 
 
     // SONG Items -------------------------------------------------------------
+    var userChoseniTunesSong = {};
+    $scope.hideiTunesResults = true;
+
+    //iTunes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    $scope.iTunesSearch = function () {
+
+        $scope.hideiTunesResults = false;
+
+        var searchTerm = $scope.searchTerm;
+
+        $scope.searching = true;
+        console.log("Search term is: ", searchTerm);
+
+        $http.jsonp($sce.trustAsResourceUrl('https://itunes.apple.com/search'), { params: { term: searchTerm, entity: "musicTrack", limit: 5 } })
+            .then(function (iTunesResponse) {
+                $scope.searching = false;
+                $scope.searchTerm = "";
+
+                for (i = 0; i < iTunesResponse.data.resultCount; i++) {
+                    //console.log(iTunesResponse.data.results[i]);
+                    console.log(iTunesResponse.data.results[i].trackName);
+                }
+
+                $scope.songResults = iTunesResponse.data.results;
+
+            }).then(function () { console.log("done") });
+    }
+
+    $scope.selectSong = function (chosenSong) {
+        userChoseniTunesSong = chosenSong;
+        $scope.hideiTunesResults = true;
+        $scope.songResults = {};
+
+        $scope.selectedSong = chosenSong;
+    }
+    //end iTunes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    //Post Song:
     $scope.addSong = function (songExample) {
 
+        //From creating the Title (aka LessonContainer):
         songExample.CustomLessonContainerId = customLessonId;
         //This is much more efficient than the addTextSection function
+
+        //From the iTunes selection:
+        songExample.SongTitle = userChoseniTunesSong.trackName;
+        songExample.SongArtist = userChoseniTunesSong.artistName;
+        songExample.SongClip = userChoseniTunesSong.previewUrl;
 
         $http.post('/api/CustomLessonSong', songExample)
             .then(function () {
@@ -86,38 +130,9 @@
             });
     }
 
-    //iTunes ---------------------------------------------
-    $scope.searchTerm = "";
-    $scope.mediaType = "musicTrack";
-    $scope.filterTerm = "";
-    $scope.sortProp = "artistName";
-    $scope.showVideo = false;
-    $scope.searching = false;
-    $scope.previewUrl = null;
+    
   
-    $scope.iTunesSearch = function () {
-        var searchTerm = $scope.searchTerm;
 
-        $scope.searching = true;
-        console.log("Search term is: ", searchTerm);
-        $http.jsonp($sce.trustAsResourceUrl('https://itunes.apple.com/search'), { params: { term: searchTerm, entity: "musicTrack", limit: 5 } })
-            .then(function (iTunesResponse) {
-                $scope.searching = false;
-                $scope.searchTerm = "";
-                
-                for (i = 0; i < iTunesResponse.data.resultCount; i++) {
-                    //console.log(iTunesResponse.data.results[i]);
-                    console.log(iTunesResponse.data.results[i].trackName);
-                }
-
-                $scope.songResults = iTunesResponse.data.results;
-                
-            }).then(function () { console.log("done") });
-    }
-
-    $scope.selectSong = function (clickTarget) {
-        console.log(clickTarget.trackName);
-    }
 
   
 
