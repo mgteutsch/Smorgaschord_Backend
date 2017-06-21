@@ -269,6 +269,10 @@
     <Compile Include="Migrations\201706170444181_CustomLessonSongs.Designer.cs">
       <DependentUpon>201706170444181_CustomLessonSongs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706210143535_FixingParentChildLesson.cs" />
+    <Compile Include="Migrations\201706210143535_FixingParentChildLesson.Designer.cs">
+      <DependentUpon>201706210143535_FixingParentChildLesson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -447,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706170444181_CustomLessonSongs.resx">
       <DependentUpon>201706170444181_CustomLessonSongs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706210143535_FixingParentChildLesson.resx">
+      <DependentUpon>201706210143535_FixingParentChildLesson.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

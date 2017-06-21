@@ -22,21 +22,45 @@
     <br/>
 
     <!--Text Creator-->
+    <!--
     <div class="textCreatorArea" ng-hide="hideTextArea">
         <textarea placeholder="Add lesson text here..." ng-model="lessonTextContent.TextSection"></textarea>
         <input placeholder="Content order..." ng-model="lessonTextContent.ContentPlacementOrder" />
         <a id="addTextButton" class="waves-effect waves-light btn" ng-click="addTextSection(lessonTextContent)"><i class="material-icons left">subject</i>Add Section to Lesson</a>
         <a id="cancelTextButton" class="waves-effect waves-light btn-flat" ng-click="cancelText()">Cancel</a>
     </div>
+    -->
 
     <!--Song Example Creator-->
-    <div class="songCreatorArea" ng-hide="hideSongArea">
-        <i class="material-icons prefix">search</i>
-        <input id="songSearchBar" placeholder="Search iTunes for song..." ng-model="searchBar" />
+    <div class="songCreatorArea input-field" ng-hide="hideSongArea">
         
+        <textarea placeholder="Add lesson text here..." ng-model="lessonSongContent.TextSection"></textarea>
+
+        <i class="material-icons prefix">search</i>
+        <input type="text" placeholder="Search iTunes..." ng-model="searchTerm" ng-disabled="searching" />
+        <a class="waves-effect waves-light btn" ng-click="iTunesSearch(searchTerm)" ng-disabled="searching">Search</a>
+        
+        <!--
+        <input id="songSearchBar" placeholder="Search iTunes for song..." ng-model="searchBar" />
+        -->
+
+        <hr />
+
+        <div ng-hide="iTunesResultsList" ng-repeat="songResult in songResults">
+            <p>Song: {{songResult.trackName}}</p>
+            <p>Artist: {{songResult.artistName}}</p>
+            <audio controls><source src="{{songResult.previewUrl}}" /></audio>
+            <a class="waves-light btn-flat" ng-click="selectSong(songResult)">Select Song</a>
+            <hr />
+        </div>
+
+        <!--
         <input id="songTitle" placeholder="Song Title" ng-model="lessonSongContent.SongTitle" />
         <input id="songArtist" placeholder="Song Artist" ng-model="lessonSongContent.SongArtist" />
         <input id="songClip" placeholder="Song Clip URL" ng-model="lessonSongContent.SongClip" />
+        -->
+
+        <h3>{{selectedSong.trackName}} || {{selectedSong.artistName}}</h3>
 
         <div id="songChords" class="row input-field">
             <a class="col s1"></a>
@@ -67,34 +91,5 @@
     </div>
 
 
-    <!--iTunes Stuff-->
-    <hr/>
-    <div id="iTunesSection" class="input-field">
-        <h4>iTunes Stuff...</h4>
 
-        <input type="text" placeholder="Search iTunes..." ng-model="searchTerm" ng-disabled="searching" />
-        <a class="waves-effect waves-light btn" ng-click="iTunesSearch(searchTerm)" ng-disabled="searching">Search</a>
-        
-        <hr />
-        
-        <div ng-repeat="songResult in songResults">
-            <p>Song: {{songResult.trackName}}</p>
-            <p>Artist: {{songResult.artistName}}</p>
-            <audio controls><source src="{{songResult.previewUrl}}" /></audio>
-            <a class="btn-flat" ng-click="selectSong(songResult)">Select Song</a>
-            <hr/>
-
-        </div>
-       
-        <div ></div>
-
-
-
-    <!--Materialize-->
-    <!--
-    <div class="input-field col s8">
-        <textarea id="textAreaCreator" class="materialize-textarea"></textarea>
-        <label for="textareaCreator">Create a text section here...</label>
-    </div>
-    -->
 </div>

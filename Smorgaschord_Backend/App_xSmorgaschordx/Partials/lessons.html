@@ -33,9 +33,22 @@
             <a href="#/lessons" class="collection-item">Lesson 15: The I, ii/II, iii/III, IV, V, vi, and vii° Chords Review</a>
         </div>
 
-        <div id="customLessonsSection" class="collection" ng-hide="!showHideLessons">
-            <a  class="collection-item" ng-repeat="lessonListItem in lessonListItems" ng-click="goToSpecificLesson(lessonListItem)">{{lessonListItem.CustomLessonTitle}}</a>
+        <div ng-hide="!showHideLessons">
+            <div id="customLessonsSection" class="collection">
+                <a class="collection-item" ng-repeat="lessonListItem in lessonListItems" ng-click="goToSpecificLesson(lessonListItem)">{{lessonListItem.CustomLessonTitle}}</a>
+            </div>
+            
+            <br />
+            
+            <div class="collection">
+                <a href="#!/customlessoncreator" class="collection-item"><i class="material-icons left">queue_music</i>Create a new Lesson...</a>
+            </div>
+
         </div>
+        
+
+        
+
 
     </div> <!-- Close Container -->
     <!--Very bottom of page -->
