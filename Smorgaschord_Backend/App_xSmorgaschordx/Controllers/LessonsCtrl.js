@@ -3,6 +3,9 @@
     let customLessonId = $routeParams.id;
     console.log(customLessonId);
 
+    $scope.normalListView = true;
+    $scope.lessonDeleteView = false;
+
 
 
     //On page load, remove any styling done by Improviser
@@ -62,7 +65,7 @@
         specificCustomLesson_Container = specificLessonSelection;
         console.log("Step 1", specificCustomLesson_Container);
 
-        $http.get('/api/CustomLessonText')
+        $http.get('/api/CustomLessonSongContent/{theLessonId}')
                 .then(function (dbTextSections) {
                     specificCustomLesson_Texts = dbTextSections.data;
                     console.log("Step 2 - the first get", dbTextSections.data);
@@ -72,6 +75,25 @@
                         $scope.lessonTextSections = specificCustomLesson_Texts;
                         console.log("Step 3 - location.url and creating texts", specificCustomLesson_Texts);
                     });
+    }
+
+
+    $scope.enableDeleteMode = function () {
+        $scope.normalListView = false; 
+        $scope.lessonDeleteView = true;
+    }
+
+    $scope.stopDeleteMode = function () {
+        $scope.normalListView = true;
+        $scope.lessonDeleteView = false;
+    }
+
+    $scope.deleteContainer = function (specificId) {
+        console.log(specificId);
+        $http.delete('/api/CustomLessonTitle/' + specificId)
+            .then(function () {
+                displayListOfCustomLessonContainers();
+            })
     }
 
 

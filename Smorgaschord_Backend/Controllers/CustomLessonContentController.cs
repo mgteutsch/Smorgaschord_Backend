@@ -18,66 +18,16 @@ namespace Smorgaschord_Backend.Controllers
             _context = new ApplicationDbContext();
         }
 
-        // Custom Lesson Title (Container) ************************************************
-        [Route("api/CustomLessonTitle")]
-        [HttpGet]
-        public List<CustomLessonContainer> GetAllLessonTitles()
-        {
-            return _context.CustomLessonContainers.ToList();
-        }
-
-        [Route("api/CustomLessonTitle")]
-        [HttpPost]
-        public CustomLessonContainer AddCustomLessonTitle(CustomLessonContainer newTitle)
-        {
-            _context.CustomLessonContainers.Add(newTitle);
-            _context.SaveChanges();
-            return newTitle;
-        }
-        
-
-        // Custom Lesson Text ***************************************************************
-        [Route ("api/CustomLessonText")]
-        [HttpGet]
-        public List<CustomLessonTextContent> GetAllTextForLesson()
-        {
-            return _context.CustomLessonTextContents.ToList();
-            //Need to make sure the text will populate in the browser correctly...
-        }
-
-
-        [Route("api/CustomLessonText")]
-        [HttpPost]
-        public void AddTextSection(CustomLessonTextContent newTextSection)
-        {
-            _context.CustomLessonTextContents.Add(newTextSection);
-            _context.SaveChanges();
-        }
-
-        [Route("api/CustomLessonText/EditTextSection")]
-        [HttpPut]
-        public void EditTextSection(CustomLessonTextContent editedSection)
-        {
-            CustomLessonTextContent editContent = _context.CustomLessonTextContents.Find(editedSection.Id);
-            editContent.TextSection = editedSection.TextSection;
-            editContent.ContentPlacementOrder = editedSection.ContentPlacementOrder;
-
-            _context.Entry(editContent).State = EntityState.Modified;
-            _context.SaveChanges();
-        }
-
-        [Route("api/CustomLessonText/{sectionId}")]
-        [HttpDelete]
-        public void DeleteSection(int sectionId)
-        {
-            CustomLessonTextContent targetedSection = _context.CustomLessonTextContents.Find(sectionId);
-            _context.CustomLessonTextContents.Remove(targetedSection);
-            _context.SaveChanges();
-        }
-
-
         // Custom Lesson Songs ***************************************************************
-        [Route("api/CustomLessonSong")]
+        [Route("api/CustomLessonSongContent/{theLessonId}")]
+        [HttpGet]
+        public List<CustomLessonSongContent> GetSongDataForLesson(int theLessonId)
+        {
+            var theSpecificLessonContainer = _context.CustomLessonContainers.FirstOrDefault(x => x.Id == theLessonId);
+            return theSpecificLessonContainer.LessonContentItems;
+        }
+
+        [Route("api/CustomLessonSongContent")]
         [HttpPost]
         public void AddSong(CustomLessonSongContent newSongExample)
         {
@@ -87,12 +37,24 @@ namespace Smorgaschord_Backend.Controllers
             _context.SaveChanges();
         }
 
-        [Route("api/CustomLessonSong/{theLessonId}")]
-        [HttpGet]
-        public List<CustomLessonSongContent> GetSongDataForLesson(int theLessonId)
+        [Route("api/CustomLessonContent/{targetContentForEdit}")]
+        [HttpPut]
+        public void EditContentSection(CustomLessonSongContent targetContentForEdit)
         {
-            var theSpecificLessonContainer = _context.CustomLessonContainers.FirstOrDefault(x => x.Id == theLessonId);
-            return theSpecificLessonContainer.LessonContentItems;
+            CustomLessonSongContent editContent = _context.CustomLessonSongContents.Find(targetContentForEdit.Id);
+            editContent = targetContentForEdit;
+
+            _context.Entry(editContent).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        [Route("api/CustomLessonContent/{sectionId}")]
+        [HttpDelete]
+        public void DeleteSection(int sectionId)
+        {
+            CustomLessonTextContent targetedSection = _context.CustomLessonTextContents.Find(sectionId);
+            _context.CustomLessonTextContents.Remove(targetedSection);
+            _context.SaveChanges();
         }
 
 
