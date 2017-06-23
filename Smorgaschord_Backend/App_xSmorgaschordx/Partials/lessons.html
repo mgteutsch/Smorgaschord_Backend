@@ -15,33 +15,36 @@
         </nav>
 
         <div id="regularLessonsSection" class="collection" ng-hide="showHideLessons" ng-init="showHideLessons=false">
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Introduction</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 1: The I Chord (The "Major One")</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 2: The IV Chord (The "Major Four")</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 3: The V Chord (The "Major Five")</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 4: The I, IV, and V Chords Review</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 5: The I, IV, and V Chords... without starting on the I</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 6: The vii° Chord (The "diminished seventh")</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 7: The I, IV, V, and vii° Chords Review</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 8: The vi Chord (The "minor six")</a>
-            <a href="#/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 9: The I, IV, V, vi, and vii° Chords Review</a>
-            <a href="#/lessons/lesson_10_minor_ii" class="collection-item" ng-click="scrollToTop()">Lesson 10: The ii Chord (The "minor second")</a>
-            <a href="#/lessons" class="collection-item">Lesson 11: The I, ii, IV, V, vi, and vii° Chords Review</a>
-            <a href="#/lessons" class="collection-item">Lesson 12: The iii Chord vs. the III Chord</a>
-            <a href="#/lessons" class="collection-item">Lesson 13: The I, ii, iii/III, IV, V, vi, and vii° Chords Review</a>
-            <a href="#/lessons" class="collection-item">Lesson 14: The II Chord (The "Major Second")</a>
-            <a href="#/lessons" class="collection-item">Lesson 15: The I, ii/II, iii/III, IV, V, vi, and vii° Chords Review</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Introduction</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 1: The I Chord (The "Major One")</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 2: The IV Chord (The "Major Four")</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 3: The V Chord (The "Major Five")</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 4: The I, IV, and V Chords Review</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 5: The I, IV, and V Chords... without starting on the I</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 6: The vii° Chord (The "diminished seventh")</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 7: The I, IV, V, and vii° Chords Review</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 8: The vi Chord (The "minor six")</a>
+            <a href="#!/lessons" class="collection-item active"><i class="material-icons right">done</i>Lesson 9: The I, IV, V, vi, and vii° Chords Review</a>
+            <a href="#!/lessons/lesson_10_minor_ii" class="collection-item" ng-click="scrollToTop()">Lesson 10: The ii Chord (The "minor second")</a>
+            <a href="#!/lessons" class="collection-item">Lesson 11: The I, ii, IV, V, vi, and vii° Chords Review</a>
+            <a href="#!/lessons" class="collection-item">Lesson 12: The iii Chord vs. the III Chord</a>
+            <a href="#!/lessons" class="collection-item">Lesson 13: The I, ii, iii/III, IV, V, vi, and vii° Chords Review</a>
+            <a href="#!/lessons" class="collection-item">Lesson 14: The II Chord (The "Major Second")</a>
+            <a href="#!/lessons" class="collection-item">Lesson 15: The I, ii/II, iii/III, IV, V, vi, and vii° Chords Review</a>
         </div>
 
         <div ng-hide="!showHideLessons">
-            <div id="customLessonsSection" class="collection">
-                <a class="collection-item" ng-repeat="lessonListItem in lessonListItems" ng-click="goToSpecificLesson(lessonListItem)">{{lessonListItem.CustomLessonTitle}}</a>
+            <div id="customLessonsSection" class="collection" ng-repeat="lessonListItem in lessonListItems">
+                    <a href="#!/lessons/customlesson/{{lessonListItem.Id}}" class="collection-item" ng-show="normalListView">{{lessonListItem.CustomLessonTitle}}</a>
+                    <a class="collection-item" ng-show="lessonDeleteView" ng-click="deleteContainer(lessonListItem.Id)"><i class="material-icons red-text text-accent-3 left">delete</i>Delete: {{lessonListItem.CustomLessonTitle}}</a>
             </div>
             
             <br />
             
             <div class="collection">
                 <a href="#!/customlessoncreator" class="collection-item"><i class="material-icons left">queue_music</i>Create a new Lesson...</a>
+                <a class="collection-item" ng-show="normalListView" ng-click="enableDeleteMode()"><i class="material-icons left">delete</i>Delete an existing Lesson...</a>
+                <a class="collection-item" ng-show="lessonDeleteView" ng-click="stopDeleteMode()"><i class="material-icons left">done</i>Finished (Restore Lesson List)</a>
             </div>
 
         </div>

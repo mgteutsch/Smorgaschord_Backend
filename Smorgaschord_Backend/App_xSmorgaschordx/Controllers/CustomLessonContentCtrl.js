@@ -122,7 +122,7 @@
         songExample.SongArtist = userChoseniTunesSong.artistName;
         songExample.SongClip = userChoseniTunesSong.previewUrl;
 
-        $http.post('/api/CustomLessonSong', songExample)
+        $http.post('/api/CustomLessonSongContent', songExample)
             .then(function () {
                 $scope.lessonSongContent = {};
                 $scope.searchBar = "";

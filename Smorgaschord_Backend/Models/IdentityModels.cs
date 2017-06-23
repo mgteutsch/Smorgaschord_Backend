@@ -26,6 +26,9 @@ namespace Smorgaschord_Backend.Models
         public DbSet<CustomLessonTextContent> CustomLessonTextContents { get; set; }
         public DbSet<CustomLessonSongContent> CustomLessonSongContents { get; set; }
 
+        //Not using TextContents any more, all Contents are within SongContents
+        //Adjust after demo.
+
         public ApplicationDbContext()
             : base("SmorgaschordDemo", throwIfV1Schema: false)
         {

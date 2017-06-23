@@ -1,7 +1,12 @@
 ﻿app.controller("LessonsCtrl", ['$q', '$scope', '$rootScope','$http', '$location', '$routeParams', function ($q, $scope, $rootScope, $http, $location, $routeParams) {
 
+    /*
     let customLessonId = $routeParams.id;
     console.log(customLessonId);
+    */
+
+    $scope.normalListView = true;
+    $scope.lessonDeleteView = false;
 
 
 
@@ -57,34 +62,37 @@
     var specificCustomLesson_Songs = {};
 
     
+    $scope.enableDeleteMode = function () {
+        $scope.normalListView = false; 
+        $scope.lessonDeleteView = true;
+    }
 
-    $scope.goToSpecificLesson = function (specificLessonSelection) {
-        specificCustomLesson_Container = specificLessonSelection;
-        console.log("Step 1", specificCustomLesson_Container);
+    $scope.stopDeleteMode = function () {
+        $scope.normalListView = true;
+        $scope.lessonDeleteView = false;
+    }
 
-        $http.get('/api/CustomLessonText')
-                .then(function (dbTextSections) {
-                    specificCustomLesson_Texts = dbTextSections.data;
-                    console.log("Step 2 - the first get", dbTextSections.data);
-                })
-                    .then(function () {
-                        $location.url("/lessons/customlesson/" + specificCustomLesson_Container.Id);
-                        $scope.lessonTextSections = specificCustomLesson_Texts;
-                        console.log("Step 3 - location.url and creating texts", specificCustomLesson_Texts);
-                    });
+    $scope.deleteContainer = function (specificId) {
+        console.log(specificId);
+        $http.delete('/api/CustomLessonTitle/' + specificId)
+            .then(function () {
+                displayListOfCustomLessonContainers();
+            })
     }
 
 
     //SPECIFIC LESSON
+    /*
     $scope.getLessonContent = function () {
         
-        $http.get('/api/CustomLessonSong/' + customLessonId)
+        $http.get('/api/CustomLessonSongContent/' + customLessonId)
             .then(function (dbLessonContent) {
                 console.log(dbLessonContent);
                 $scope.lessonSongExamples = dbLessonContent.data;
             })
                 
     }
+    */
 
     $scope.deleteLesson = function (specificCustomLesson_Container) {
         console.log(specificCustomLesson_Container);

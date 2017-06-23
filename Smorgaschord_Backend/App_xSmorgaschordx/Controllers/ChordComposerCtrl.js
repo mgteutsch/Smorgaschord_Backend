@@ -35,7 +35,16 @@
             });
     }
 
+    //Clears user's progression:
+    $scope.clearProgression = function () {
+        $scope.newProgression = {};
+    };
 
+
+    //Loads Saved Chords so they can be played:
+    $scope.loadToPlayer = function (savedChords) {
+        $scope.newProgression = savedChords;
+    };
 
 
 

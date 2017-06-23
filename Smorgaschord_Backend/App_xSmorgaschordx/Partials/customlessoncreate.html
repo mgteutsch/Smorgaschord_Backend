@@ -2,10 +2,11 @@
     <h1>Custom Lesson Creator</h1>
 </div>
 
-<div class="container" ng-hide="hideTitleCreator">
+<div class="container center" ng-hide="hideTitleCreator">
     <div class="input-field">
         <input type="text" placeholder="Title of Lesson" class="col s6" ng-model="customLessonInitialize.CustomLessonTitle" />
         <a id="saveTitleButton" class="waves-effect waves-light btn" ng-click="saveLessonTitle(customLessonInitialize)">Save Lesson Title</a>
+        <a href="#!/lessons" class="waves-effect btn-flat">Cancel</a>
         <br />
         <p>Note: You'll be able to edit your lesson's title later if you change your mind.</p>
     </div>
@@ -13,47 +14,54 @@
 
 
 <div class="container" ng-hide="hideSongAndTextCreators">
-    <h3>{{lessonTitleEditor}}</h3>
-    <div class="input-field">
+    <h3 class="center">{{lessonTitleEditor}}</h3>
+    <br/>
+    <hr/>
+    
+    <div class="input-field center">
         <a id="initiazteSongCreator" class="waves-effect waves-light btn" ng-click="openSongCreator()"><i class="material-icons left">library_music</i>Add Song Example</a>
+        <a href="#!/lessons" class="waves-effect btn-flat">Done</a>
     </div>
 
+    <hr/>
+    <br/>
     <br/>
 
     <!--Song Example Creator-->
-    <div class="songCreatorArea input-field" ng-hide="hideSongArea">
+    <div class="songCreatorArea input-field center" ng-hide="hideSongArea">
         
+        <h6 class="teal-text text-accent-4">First, write a short blurb about what the students should listen for in the song clip:</h6>
         <textarea placeholder="Add lesson text here..." ng-model="lessonSongContent.TextSection"></textarea>
+        <hr/>
 
+        <br/>
+        <h6 class="teal-text text-accent-4">Next, choose a song clip from iTunes:</h6>
         <i class="material-icons prefix">search</i>
         <input type="text" placeholder="Search iTunes..." ng-model="searchTerm" ng-disabled="searching" />
-        <a class="waves-effect waves-light btn" ng-click="iTunesSearch(searchTerm)" ng-disabled="searching">Search</a>
-        
-        <!--
-        <input id="songSearchBar" placeholder="Search iTunes for song..." ng-model="searchBar" />
-        -->
-
+        <a class="waves-effect waves-light btn center" ng-click="iTunesSearch(searchTerm)" ng-disabled="searching">Search</a>
+        <br />
+        <br />
         <hr />
 
-        <div ng-hide="iTunesResultsList" ng-repeat="songResult in songResults">
-            <p>Song: {{songResult.trackName}}</p>
-            <p>Artist: {{songResult.artistName}}</p>
+        <div class="center" ng-hide="iTunesResultsList" ng-repeat="songResult in songResults">
+            <h5 class="pink-text text-accent-3">Song: {{songResult.trackName}}</h5>
+            <h6>Artist: {{songResult.artistName}}</h6>
             <audio controls><source src="{{songResult.previewUrl}}" /></audio>
+            <br/>
             <a class="waves-light btn-flat" ng-click="selectSong(songResult)">Select Song</a>
             <hr />
         </div>
-
-        <!--
-        <input id="songTitle" placeholder="Song Title" ng-model="lessonSongContent.SongTitle" />
-        <input id="songArtist" placeholder="Song Artist" ng-model="lessonSongContent.SongArtist" />
-        <input id="songClip" placeholder="Song Clip URL" ng-model="lessonSongContent.SongClip" />
-        -->
+        <br />
+        <br />
 
         <h3>{{selectedSong.trackName}} || {{selectedSong.artistName}}</h3>
 
-        <div id="songChords" class="row input-field">
+        <br />
+
+        <h6 class="teal-text text-accent-4">Enter the chord numbers corresponding to the song clip:</h6>
+        <div id="songChords" class="row input-field center">
             <a class="col s1"></a>
-            <input type="text" placeholder="1" class="newChordInput1 col s1" ng-model="lessonSongContent.Chord1">
+            <input type="text" placeholder="1" class="newChordInput1 col s1 offset-s4" ng-model="lessonSongContent.Chord1">
             <a class="col s2"></a>
             <input type="text" placeholder="2" class="newChordInput2 col s1" ng-model="lessonSongContent.Chord2">
             <a class="col s2"></a>
@@ -62,9 +70,12 @@
             <input type="text" placeholder="4" class="newChordInput4 col s1" ng-model="lessonSongContent.Chord4">
         </div>
 
+        <br />
+
+        <h6 class="teal-text text-accent-4">Then, enter the milliseconds for each chord's change:</h6>
         <div id="chordMiliseconds" class="row input-field">
             <a class="col s1"></a>
-            <input type="text" placeholder="1ms" class="newChordInput1 col s1" ng-model="lessonSongContent.Chord1Milisec">
+            <input type="text" placeholder="1ms" class="newChordInput1 col s1 offset-s4" ng-model="lessonSongContent.Chord1Milisec">
             <a class="col s2"></a>
             <input type="text" placeholder="2ms" class="newChordInput2 col s1" ng-model="lessonSongContent.Chord2Milisec">
             <a class="col s2"></a>
@@ -72,11 +83,30 @@
             <a class="col s2"></a>
             <input type="text" placeholder="4ms" class="newChordInput4 col s1" ng-model="lessonSongContent.Chord4Milisec">
         </div>
+        <h6 class="teal-text text-accent-4">The above millisecond entries allows the correct chords to glow at the correct time.</h6>
+
         
-        <input placeholder="Content order..." ng-model="lessonSongContent.ContentPlacementOrder" />
+        <br/>
+        <hr/>
+        <br/>
+        <h6 class="teal-text text-accent-4">Finally, enter the order you want this section to be in (1=1st, 2=2nd, etc.):</h6>
+        <div cass="row input-field">
+            <input type="text" placeholder="Content order..." ng-model="lessonSongContent.ContentPlacementOrder" />
+         </div>
         
-        <a id="addSongButton" class="waves-effect waves-light btn" ng-click="addSong(lessonSongContent)"><i class="material-icons left">library_music</i>Add Song to Lesson</a>
-        <a id="cancelSongButton" class="waves-effect waves-light btn-flat" ng-click="cancelSongExample()">Cancel</a>
+        
+        <hr/>
+        <br/>
+        
+        <h6 class="teal-text text-accent-4">When you're finished, click "Add Song To Lesson" below:</h6>
+        <br/>
+
+        <div class="center">
+            <a id="addSongButton" class="waves-effect waves-light btn" ng-click="addSong(lessonSongContent)"><i class="material-icons left">library_music</i>Add Song to Lesson</a>
+            <a id="cancelSongButton" class="waves-effect waves-light btn-flat" ng-click="cancelSongExample()">Cancel</a>
+        </div>
+        <br/>
+        <br/>
     </div>
 
 
