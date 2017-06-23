@@ -114,13 +114,13 @@
 /**************************************************************/
 /* Single Lessons Styling */
 /**************************************************************/
-.singleLessonBackground {
-  background-image: url("../images/singleLessons/singleLessonBackground.jpg");
-  background-repeat: repeat-xy; }
 
 .singleLessonContainer {
-  padding: 10px 10px 10px 10px; }
-  .singleLessonContainer p {
+  padding: 10px 10px 10px 10px; 
+  border: 1px solid darkgray;
+}
+
+.singleLessonContainer p {
     font-size: 100%; }
 
 .lessonChordBoxes {

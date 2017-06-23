@@ -1,39 +1,34 @@
-﻿<h1>Custom Lesson Placeholder</h1>
-<h2 ng-model="specificLessonTitle.CustomLessonTitle"></h2>
-
-<a class="waves-light btn" ng-click="getLessonContent()">Begin Lesson (temporary button)</a>
+﻿<div>
+    <h1 class=>Lessons</h1>
 
 
 
-<div class="container">
-    
-    <h3>Lesson Content should post here:</h3>
-    <hr />
-    <br />
-    <div ng-repeat="lessonSongExample in lessonSongExamples">
+    <div class="container white singleLessonContainer">
+
+        <h3 class="teal-text text-accent-4">{{lessonTitle.CustomLessonTitle}}</h3>
         <hr />
-        <p>{{lessonSongExample.TextSection}}</p>
-        <hr />  
+        <br />
+        <div ng-repeat="lessonSongExample in lessonSongExamples">
+            <hr />
+            <p>{{lessonSongExample.TextSection}}</p>
+            <hr />
 
-        <h4 class="center">{{lessonSongExample.SongTitle}} || {{lessonSongExample.SongArtist}}</h4>
-        <hr />
-        <div class="center">
-            <div class="row">
-                <span class="col s1 offset-s4 center-align valign-wrapper lessonChordBoxes">{{lessonSongExample.Chord1}}</span>
-                <span class="col s1 center-align valign-wrapper lessonChordBoxes">{{lessonSongExample.Chord2}}</span>
-                <span class="col s1 center-align valign-wrapper lessonChordBoxes">{{lessonSongExample.Chord3}}</span>
-                <span class="col s1 center-align valign-wrapper lessonChordBoxes">{{lessonSongExample.Chord4}}</span>
-                <br/>
+            <h4 class="center">{{lessonSongExample.SongTitle}} || {{lessonSongExample.SongArtist}}</h4>
+            <hr />
+            <div class="center">
+                <div class="row">
+                    <span class="col s1 offset-s4"><h5>{{lessonSongExample.Chord1}}</h5></span>
+                    <span class="col s1 pink-text text-accent-3"><h5>{{lessonSongExample.Chord2}}</h5></span>
+                    <span class="col s1"><h5>{{lessonSongExample.Chord3}}</h5></span>
+                    <span class="col s1"><h5>{{lessonSongExample.Chord4}}</h5></span>
+                    <br />
+                </div>
+
+                <audio controls><source src="{{lessonSongExample.SongClip}}" /></audio>
+
             </div>
-            
-            <audio controls><source src="{{lessonSongExample.SongClip}}" /></audio>
-
         </div>
-
-        
-
     </div>
-    
 </div>
 
-<a class="waves=light btn" ng-click="deleteLesson(lessonListItem)">Delete Lesson<i class="material-icons right">delete</i></a>
+<br/>

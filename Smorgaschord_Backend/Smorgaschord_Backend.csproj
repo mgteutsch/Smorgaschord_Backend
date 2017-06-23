@@ -290,6 +290,7 @@
   <ItemGroup>
     <Content Include="App_xSmorgaschordx\Controllers\ChordComposerCtrl.js" />
     <Content Include="App_xSmorgaschordx\Controllers\CustomLessonContentCtrl.js" />
+    <Content Include="App_xSmorgaschordx\Controllers\CustomLessonPageCtrl.js" />
     <Content Include="App_xSmorgaschordx\Controllers\HomeController.js" />
     <Content Include="App_xSmorgaschordx\Controllers\LessonsCtrl.js" />
     <Content Include="App_xSmorgaschordx\Controllers\LoginController.js" />

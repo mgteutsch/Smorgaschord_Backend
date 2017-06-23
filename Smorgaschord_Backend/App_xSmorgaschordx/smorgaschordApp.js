@@ -34,7 +34,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         .when("/lessons/customlesson/:id",
         {
             templateUrl: "App_xSmorgaschordx/Partials/customlessonpage.html",
-            controller: "LessonsCtrl"
+            controller: "CustomLessonPageCtrl"
         }
         
         )

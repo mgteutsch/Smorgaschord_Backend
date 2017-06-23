@@ -24,6 +24,13 @@ namespace Smorgaschord_Backend.Controllers
             return _context.CustomLessonContainers.ToList();
         }
 
+        [Route("api/CustomLessonTitle/{specificLessonId}")]
+        [HttpGet]
+        public CustomLessonContainer GetSpecificLessonContainer(int specificLessonId)
+        {
+            return _context.CustomLessonContainers.Find(specificLessonId);
+        }
+
         [Route("api/CustomLessonTitle")]
         [HttpPost]
         public CustomLessonContainer AddCustomLessonTitle(CustomLessonContainer newTitle)

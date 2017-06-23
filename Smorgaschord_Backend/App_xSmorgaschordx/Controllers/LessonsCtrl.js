@@ -1,7 +1,9 @@
 ﻿app.controller("LessonsCtrl", ['$q', '$scope', '$rootScope','$http', '$location', '$routeParams', function ($q, $scope, $rootScope, $http, $location, $routeParams) {
 
+    /*
     let customLessonId = $routeParams.id;
     console.log(customLessonId);
+    */
 
     $scope.normalListView = true;
     $scope.lessonDeleteView = false;
@@ -80,6 +82,7 @@
 
 
     //SPECIFIC LESSON
+    /*
     $scope.getLessonContent = function () {
         
         $http.get('/api/CustomLessonSongContent/' + customLessonId)
@@ -89,6 +92,7 @@
             })
                 
     }
+    */
 
     $scope.deleteLesson = function (specificCustomLesson_Container) {
         console.log(specificCustomLesson_Container);
