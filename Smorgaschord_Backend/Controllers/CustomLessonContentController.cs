@@ -37,7 +37,7 @@ namespace Smorgaschord_Backend.Controllers
             _context.SaveChanges();
         }
 
-        [Route("api/CustomLessonContent/{targetContentForEdit}")]
+        [Route("api/CustomLessonSongContent/{targetContentForEdit}")]
         [HttpPut]
         public void EditContentSection(CustomLessonSongContent targetContentForEdit)
         {
@@ -48,7 +48,7 @@ namespace Smorgaschord_Backend.Controllers
             _context.SaveChanges();
         }
 
-        [Route("api/CustomLessonContent/{sectionId}")]
+        [Route("api/CustomLessonSongContent/{sectionId}")]
         [HttpDelete]
         public void DeleteSection(int sectionId)
         {

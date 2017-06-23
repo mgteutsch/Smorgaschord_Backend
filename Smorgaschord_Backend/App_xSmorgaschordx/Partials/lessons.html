@@ -35,7 +35,7 @@
 
         <div ng-hide="!showHideLessons">
             <div id="customLessonsSection" class="collection" ng-repeat="lessonListItem in lessonListItems">
-                    <a class="collection-item" ng-show="normalListView" ng-click="goToSpecificLesson(lessonListItem)">{{lessonListItem.CustomLessonTitle}}</a>
+                    <a href="#!/lessons/customlesson/{{lessonListItem.Id}}" class="collection-item" ng-show="normalListView">{{lessonListItem.CustomLessonTitle}}</a>
                     <a class="collection-item" ng-show="lessonDeleteView" ng-click="deleteContainer(lessonListItem.Id)"><i class="material-icons red-text text-accent-3 left">delete</i>Delete: {{lessonListItem.CustomLessonTitle}}</a>
             </div>
             
